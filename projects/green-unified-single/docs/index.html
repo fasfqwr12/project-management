@@ -1,0 +1,206 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Unified 平台单发调试 - 单页台账</title>
+  <link rel="stylesheet" href="../../../docs/doc-style.css">
+  <style>
+    .search-box { margin: 10px 0 14px; }
+    .search-box input {
+      width: 100%;
+      box-sizing: border-box;
+      border: 1px solid #cfdced;
+      border-radius: 8px;
+      padding: 10px 12px;
+      font-size: 14px;
+    }
+    .toc {
+      margin: 8px 0 14px;
+      padding: 10px 12px;
+      background: #f7faff;
+      border: 1px solid #e4edf9;
+      border-radius: 8px;
+      font-size: 14px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .toc a { color: #205fcb; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .section-block { margin-top: 18px; padding-top: 12px; border-top: 1px solid #e9eff8; }
+    table { width: 100%; border-collapse: collapse; margin-top: 8px; }
+    th, td { border: 1px solid #dce5f1; padding: 8px; text-align: left; vertical-align: top; font-size: 14px; }
+    th { background: #f7faff; }
+    .status-pass { color: #178246; font-weight: 600; }
+    .status-info { color: #8a6700; font-weight: 600; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Unified 平台单发调试 - 单页台账</h1>
+      <div class="meta">更新时间：2026-03-30；本页包含任务总览、三原理差异、单发引脚对应状态、执行清单。可直接滚动和搜索。</div>
+
+      <div class="search-box">
+        <input id="searchInput" type="text" placeholder="搜索关键词（如：单发、引脚、采集、F7、FB、BA、AC）">
+      </div>
+
+      <div class="toc">
+        <a href="#sec-overview">任务总览</a>
+        <a href="#sec-facts">事实口径</a>
+        <a href="#sec-manage">文件管理统一</a>
+        <a href="#sec-principle">三原理差异</a>
+        <a href="#sec-pin">单发引脚对应状态</a>
+        <a href="#sec-switch-order">切换先后顺序</a>
+        <a href="#sec-flow">统一流程与替换边界</a>
+        <a href="#sec-debug-order">调试先后顺序</a>
+        <a href="#sec-temp-comp">温补策略入口</a>
+        <a href="#sec-next">下一步清单</a>
+      </div>
+
+      <section id="sec-overview" class="section-block" data-search="任务 总览 unified 单发 对齐 采集 替换">
+        <h2>任务总览</h2>
+        <ul>
+          <li>主工程：`E:\相位\program\green`（统一平台主线）。</li>
+          <li>参考工程：`E:\相位\program\gd303_refactor 双发 - 副本 (5)\gd303_refactor 双发 - 副本 (5)`（引脚与采集语义参考）。</li>
+          <li>目标：按 unified 流程替换采集部分，完成单发口径闭环。</li>
+        </ul>
+      </section>
+
+      <section id="sec-facts" class="section-block" data-search="事实 口径 已确认 待确认 双发 双收 单发 实机 回归">
+        <h2>事实口径（先对齐再推进）</h2>
+        <table>
+          <thead>
+            <tr><th>事项</th><th>当前口径</th><th>状态</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>双发对齐</td><td>你们反馈：双发已基本对齐并做过调试测试</td><td class="status-pass">已确认</td></tr>
+            <tr><td>双收对齐</td><td>你们反馈：双收已基本对齐并做过调试测试</td><td class="status-pass">已确认</td></tr>
+            <tr><td>单发目标</td><td>当前主线切到单发调试，后续记录以单发回归结果为准</td><td class="status-info">待确认</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sec-manage" class="section-block" data-search="文件 管理 统一 board profile config driver core hw_system cmd 目录 规则">
+        <h2>文件管理统一（固定分层）</h2>
+        <table>
+          <thead>
+            <tr><th>层级</th><th>只放什么</th><th>主文件</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>板级层</td><td>纯引脚/外设映射真值，不放策略</td><td>`board/board_types.h`、`board/board.h`、`board/board_gd303_*.h`</td></tr>
+            <tr><td>身份层</td><td>项目身份、原理、能力宏</td><td>`config/profile.h`、`config/config.h`、`config/profile_strategy.h`</td></tr>
+            <tr><td>驱动层</td><td>GPIO/ADC/DAC/光路切换硬件动作</td><td>`drivers/drv_adc.c`、`drivers/drv_laser.c`、`drivers/drv_optical_switch.c`</td></tr>
+            <tr><td>采集层</td><td>DMA样本语义解包与采集聚合</td><td>`core/measure_session.h`、`core/measure_core.c`</td></tr>
+            <tr><td>流程层</td><td>会话生命周期与阶段编排</td><td>`hw_system/hw_system.c`、`ranging/range_engine.c`</td></tr>
+            <tr><td>命令层</td><td>协议入口与回包，不埋采集真值</td><td>`cmd/cmd_ranging.c`、`cmd/cmd_calibration.c`</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sec-principle" class="section-block" data-search="三原理 单发 双发 双收 采样 拓扑 ld_select dac apd">
+        <h2>三原理关键差异</h2>
+        <table>
+          <thead>
+            <tr><th>维度</th><th>单发</th><th>双发</th><th>双收</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>采集拓扑</td><td>双ADC同步（电混合）</td><td>单ADC + LD_SELECT 分时</td><td>双ADC同步（双接收）</td></tr>
+            <tr><td>光路切换</td><td>通常不依赖 LD_SELECT</td><td>强依赖 LD_SELECT</td><td>通常不依赖 LD_SELECT</td></tr>
+            <tr><td>功率语义</td><td>GPIO档位为主</td><td>DAC + LL/HH/LH/HL</td><td>DAC为主</td></tr>
+            <tr><td>APD搜索主路径</td><td>偏外路</td><td>偏内路</td><td>偏内路</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sec-pin" class="section-block" data-search="单发 引脚 对应 状态 board profile target 默认 双发归档">
+        <h2>单发引脚对应状态（当前）</h2>
+        <table>
+          <thead>
+            <tr><th>项</th><th>当前 unified 状态</th><th>结论</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>默认编译身份</td><td>代码层已切到 `BOARD_GD303_SINGLE_MAIN`（单发口径）</td><td class="status-info">待编译下载确认</td></tr>
+            <tr><td>板级引脚真值</td><td>单发当前复用 dual_rx_main 已验证映射（PA0/PB1/PA11/PB0）</td><td class="status-info">待实机采样验证</td></tr>
+            <tr><td>单发专属板级</td><td>已新增 `board_gd303_single_main.h` 与单发身份显示</td><td class="status-info">待命令链回归确认</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sec-switch-order" class="section-block" data-search="切换 先后 顺序 BOARD_TYPE PROFILE_TYPE OPTICAL_MODE 能力宏 引脚 采集">
+        <h2>原理切换先后顺序（必须按这个改）</h2>
+        <ol>
+          <li>先定身份：`BOARD_TYPE`（`board/board.h`）与 `PROFILE_TYPE`（`profile.h`）一致。</li>
+          <li>再定原理：`OPTICAL_MODE`（`config.h`）确保与目标原理一致。</li>
+          <li>再校引脚：对应 `board_gd303_*.h` 的采样脚、触发脚、功率脚、LD_SELECT。</li>
+          <li>再看能力宏：`USE_DUAL_ADC_SYNC`、`USE_DAC_POWER`、`USE_LD_SELECT` 是否符合目标原理。</li>
+          <li>再核驱动：`drv_adc/drv_laser/drv_optical_switch` 是否与能力宏一致执行。</li>
+          <li>最后核采集语义：`measure_session/measure_core` 的 `outer/inner` 解包和 path 语义。</li>
+        </ol>
+      </section>
+
+      <section id="sec-flow" class="section-block" data-search="流程 start config stop hw_system measure_session measure_core 采集 替换">
+        <h2>统一流程与替换边界</h2>
+        <ul>
+          <li>流程基线保持 unified：`HW_REQ_START -> HW_REQ_CONFIG -> HW_REQ_STOP`。</li>
+          <li>采集替换优先落点：`drv_adc`、`measure_session`、`measure_core`，不先动 S3/S4 融合。</li>
+          <li>上层命令链用于回归闭环：`F7 / FB / BA / AC`。</li>
+        </ul>
+      </section>
+
+      <section id="sec-debug-order" class="section-block" data-search="调试 先后 顺序 自检 模块加载 驱动 信号 AC F7 FB BA A3 F1 F4 回归">
+        <h2>调试先后顺序（建议固定流程）</h2>
+        <ol>
+          <li>先自检：固件启动后先看模块加载/初始化是否有报错（先排系统级问题）。</li>
+          <li>再驱动：逐项确认关键驱动可工作（ADC、Laser、Optical Switch、APD、PLL）。</li>
+          <li>再信号链：先看实时信号是否成立（幅值、内外路语义、切路后变化）。</li>
+          <li>然后 AC：确认 APD 搜索链和功率切换链可闭环。</li>
+          <li>再 F7：确认身份与当前目标原理一致。</li>
+          <li>再 FB/BA：先单次测距，再稳定性测试。</li>
+          <li>再 A3：波形与采样语义做交叉确认。</li>
+          <li>最后 F1/F4：只在前面都通过后进入校准链。</li>
+          <li>每阶段写 runs：只写“已确认/待确认”，通过后再改完成。</li>
+        </ol>
+      </section>
+
+      <section id="sec-temp-comp" class="section-block" data-search="温度 补偿 策略 B6 模型 工作点 相位 补偿 AX VBR 单发">
+        <h2>温补策略入口</h2>
+        <ul>
+          <li>统一平台单发温补策略已单独整理成 HTML 页面，口径按“常温基准 → B6 温扫 → 工作点补偿 → 相位补偿表 → 运行时闭环”。</li>
+          <li><a href="../../../docs/single-temperature-compensation-strategy-sim.html">打开单发温度补偿策略（模拟数据版）</a></li>
+        </ul>
+      </section>
+
+      <section id="sec-next" class="section-block" data-search="下一步 清单 F7 FB BA AC run 回归 闭环">
+        <h2>下一步清单</h2>
+        <ol>
+          <li>执行单发命令链回归，确认 F7 身份、FB/BA 采样稳定、AC 搜索口径一致。</li>
+          <li>按实机结果微调单发 profile 参数（APD窗、弱信号阈值、功率策略）。</li>
+          <li>执行 `F7/FB/BA/AC` 回归并持续写入 runs。</li>
+        </ol>
+      </section>
+
+      <div class="nav">
+        <a href="../index.html">返回项目首页</a>
+        <a href="../../../index.html">返回总览</a>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    (function () {
+      const input = document.getElementById("searchInput");
+      const blocks = Array.from(document.querySelectorAll(".section-block"));
+      function applyFilter() {
+        const q = (input.value || "").trim().toLowerCase();
+        blocks.forEach((el) => {
+          const text = (el.innerText + " " + (el.getAttribute("data-search") || "")).toLowerCase();
+          el.style.display = !q || text.includes(q) ? "" : "none";
+        });
+      }
+      input.addEventListener("input", applyFilter);
+    })();
+  </script>
+</body>
+</html>

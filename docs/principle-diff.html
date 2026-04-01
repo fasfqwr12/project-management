@@ -1,0 +1,38 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>三原理差异速览</title>
+  <link rel="stylesheet" href="./doc-style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>三原理差异速览</h1>
+      <div class="meta">资料说明：用于快速区分单发 / 双发 / 双收的采样语义、能力宏和调试风险点。</div>
+
+      <h2>核心差异</h2>
+      <ul>
+        <li><strong>单发</strong>：双 ADC 电混合语义；重点关注口径映射。</li>
+        <li><strong>双发</strong>：单 ADC + <code>LD_SELECT</code> 分时；重点关注切换时序。</li>
+        <li><strong>双收</strong>：双 ADC 同步采样；重点关注双路归一化和融合。</li>
+      </ul>
+
+      <h2>能力宏</h2>
+      <ul>
+        <li>单发：<code>USE_DUAL_ADC_SYNC=1</code>，<code>USE_LD_SELECT=0</code></li>
+        <li>双发：<code>USE_DUAL_ADC_SYNC=0</code>，<code>USE_LD_SELECT=1</code></li>
+        <li>双收：<code>USE_DUAL_ADC_SYNC=1</code>，<code>USE_LD_SELECT=0</code></li>
+      </ul>
+
+      <div class="nav">
+        <a href="./index.html">资料导航</a>
+        <a href="../index.html">返回项目总览</a>
+        <a href="./platform-alignment-log.html">查看对齐台账</a>
+        <a href="./bootloader-overview.html">查看 Bootloader 介绍</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

@@ -1,0 +1,55 @@
+{
+  "config_name": "cfgC_1292_1604",
+  "timestamp": "2026-03-31 17:35:40",
+  "port": "COM3",
+  "baud": 115200,
+  "fb_mode": 1,
+  "repeat": 3,
+  "runs": [
+    {
+      "amps": {
+        "F3": 20450,
+        "F2": 20700,
+        "F1": 57300,
+        "F0": 15550
+      },
+      "dist_mm": 5009,
+      "apd": 900,
+      "pwr": 0,
+      "line_fb": "[FB] st=0 dist_mm=5009 amp=20450 range_mm=7 q=1000 apd=900 shots=1/1 retry=0 pwr=0",
+      "run_index": 1
+    },
+    {
+      "amps": {
+        "F3": 13400,
+        "F2": 17650,
+        "F1": 57650,
+        "F0": 11250
+      },
+      "dist_mm": 5010,
+      "apd": 900,
+      "pwr": 0,
+      "line_fb": "[FB] st=0 dist_mm=5010 amp=13400 range_mm=6 q=1000 apd=900 shots=1/1 retry=0 pwr=0",
+      "run_index": 2
+    },
+    {
+      "amps": {
+        "F3": 12900,
+        "F2": 17900,
+        "F1": 57750,
+        "F0": 8600
+      },
+      "dist_mm": 5012,
+      "apd": 900,
+      "pwr": 0,
+      "line_fb": "[FB] st=0 dist_mm=5012 amp=12900 range_mm=7 q=1000 apd=900 shots=1/1 retry=0 pwr=0",
+      "run_index": 3
+    }
+  ],
+  "avg_amp": {
+    "F0": 11800,
+    "F1": 57566,
+    "F2": 18750,
+    "F3": 15583
+  }
+}

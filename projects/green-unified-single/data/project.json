@@ -1,0 +1,21 @@
+{
+  "id": "green-unified-single",
+  "name": "Unified 平台单发调试",
+  "path": "E:\\相位\\program\\green",
+  "intro": "统一平台主工程，当前用于单发能力接入与兼容调试。",
+  "related_paths": [
+    "E:\\相位\\program\\green",
+    "E:\\相位\\program\\gd303_refactor 双发 - 副本 (5)\\gd303_refactor 双发 - 副本 (5)",
+    "E:\\相位\\debug-script"
+  ],
+  "related_docs": [
+    {
+      "path": "docs/index.html",
+      "title": "单页总台账（可搜索/分章节）",
+      "intro": "一个页面查看全部内容：任务总览、三原理差异、单发引脚状态、流程边界与执行清单。"
+    }
+  ],
+  "last_stage": "single-page-docs",
+  "last_status": "info",
+  "run_count": 10
+}

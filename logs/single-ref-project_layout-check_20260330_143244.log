@@ -1,0 +1,64 @@
+﻿
+
+    目录: E:\相位\program\gd303_refactor 双发 - 副本 (5)\gd303_refactor 双发 - 副本 (5)\project
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         2026/1/24     17:35                .cmsis                                                               
+d-----         2026/1/24     17:35                .eide                                                                
+d-----         2026/1/24     17:35                .vscode                                                              
+d-----         2026/1/24     17:35                build                                                                
+d-----         2026/1/24     17:35                list                                                                 
+d-----         2026/1/24     17:35                Listings                                                             
+d-----         2026/3/18     10:10                output                                                               
+d-----         2026/1/24     17:35                RTE                                                                  
+------        2025/12/29     14:58            539 .clang-format                                                        
+------          2026/1/8     10:44           1571 .clangd                                                              
+------        2025/12/29     15:04            166 .gitignore                                                           
+------         2026/1/16     15:29           4113 build_log.txt                                                        
+------         2026/1/27      9:29            339 EventRecorderStub.scvd                                               
+------        2025/12/29     15:41           1345 gd103.code-workspace                                                 
+------         2026/3/18     10:10         186828 gd103.uvguix.Administrator                                           
+------        2025/10/16     14:10         191778 gd103.uvguix.WR                                                      
+------         2026/1/27      9:35          28266 gd103.uvoptx                                                         
+------          2026/2/2     10:53          29669 gd103.uvprojx                                                        
+------        2025/10/12     14:53          94233 gd103_UNIT_WR.dep                                                    
+------         2025/12/3     15:20            697 JLinkLog.txt                                                         
+------        2025/10/12     14:53            760 JLinkSettings.ini                                                    
+------        2025/10/12     14:53          10795 keil_version_calc.py                                                 
+------          2026/2/2     10:53            575 linker.sct                                                           
+
+
+    目录: E:\相位\program\gd303_refactor 双发 - 副本 (5)\gd303_refactor 双发 - 副本 (5)\config
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+------        2025/12/27     11:24           7335 board.h                                                              
+------          2026/2/2     19:12          11286 config.h                                                             
+------        2025/12/22     10:01           2933 rtconfig.h                                                           
+
+
+    目录: E:\相位\program\gd303_refactor 双发 - 副本 (5)\gd303_refactor 双发 - 副本 (5)\tools
+
+
+Mode                 LastWriteTime         Length Name                                                                 
+----                 -------------         ------ ----                                                                 
+d-----         2026/1/28     22:37                modules                                                              
+d-----         2026/3/30     14:32                project-management                                                   
+d-----         2026/1/29      9:07                _old                                                                 
+------         2026/3/18     10:01          23094 compare_5_vs_5copy_report.md                                         
+------         2026/1/29     14:24          25586 index.html                                                           
+------         2026/1/29      9:35           6135 laser_debug_tool.html                                                
+------         2026/1/29      9:56        1895424 miniserve.exe                                                        
+------         2026/1/23     15:39          11325 post_build.py                                                        
+------         2026/1/29      9:59            114 run.bat                                                              
+------         2026/1/29      9:35            775 start_server.bat                                                     
+------         2025/12/8     13:37           5562 test_atan2_precision.py                                              
+------         2026/1/29     14:30           6029 test_export.html                                                     
+------         2026/1/29      9:55           1089 下载服务器.bat                                                            
+------         2026/1/29      9:55          13027 激光调试工具.hta                                                           
+
+
+

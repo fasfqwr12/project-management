@@ -1,0 +1,29 @@
+{
+  "config_name": "cfgH_all8mA",
+  "timestamp": "2026-03-31 18:09:36",
+  "port": "COM3",
+  "baud": 115200,
+  "fb_mode": 1,
+  "repeat": 1,
+  "runs": [
+    {
+      "amps": {
+        "F3": 17950,
+        "F2": 17650,
+        "F1": 57150,
+        "F0": 56100
+      },
+      "dist_mm": 5005,
+      "apd": 910,
+      "pwr": 0,
+      "line_fb": "[FB] st=0 dist_mm=5005 amp=17950 range_mm=3 q=1000 apd=910 shots=1/1 retry=0 pwr=0",
+      "run_index": 1
+    }
+  ],
+  "avg_amp": {
+    "F0": 56100,
+    "F1": 57150,
+    "F2": 17650,
+    "F3": 17950
+  }
+}

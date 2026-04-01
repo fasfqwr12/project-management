@@ -1,0 +1,11 @@
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'd:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'GD32_Bootloader'
+compiling bootloader.c...
+Core\Src\bootloader.c(291): warning:  #550-D: variable "new_fw_version"  was set but never used
+      uint32_t new_fw_version = 0;
+Core\Src\bootloader.c: 1 warning, 0 errors
+linking...
+Program Size: Code=6930 RO-data=354 RW-data=36 ZI-data=2996  
+FromELF: creating hex file...
+".\Objects\GD32_Bootloader.axf" - 0 Error(s), 1 Warning(s).
+Build Time Elapsed:  00:00:02

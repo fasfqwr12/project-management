@@ -1,0 +1,114 @@
+[
+  {
+    "id": "green-unified-single",
+    "name": "Unified 平台单发调试",
+    "path": "E:\\相位\\program\\green",
+    "intro": "统一平台主工程，当前用于单发能力接入与兼容调试。",
+    "related_paths": [
+      "E:\\相位\\program\\green",
+      "E:\\相位\\program\\gd303_refactor 双发 - 副本 (5)\\gd303_refactor 双发 - 副本 (5)",
+      "E:\\相位\\debug-script"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/green-unified-single/docs/index.html",
+        "title": "单页总台账（可搜索/分章节）",
+        "intro": "一个页面查看全部内容：任务总览、三原理差异、单发引脚状态、流程边界与执行清单。"
+      }
+    ],
+    "last_stage": "single-vbr-coeff-a3-outer-check",
+    "last_status": "pass",
+    "last_summary": "单发口径对齐完成：F4按外路VBR+系数收敛；回归F7/FB/A3/AC/A3/BA=6/6通过；A3外光路峰值中位值均>2100（存在偶发单点掉幅）",
+    "last_problem": "A3外光路存在偶发单点掉幅（建议按3次中位值判定并继续联调硬件链路）",
+    "last_updated": "2026-03-31 13:33:37",
+    "run_count": 27,
+    "fail_count": 5,
+    "open_problems": [
+      {
+        "timestamp": "2026-03-30 18:23:04",
+        "text": "ST-LINK仅识别到探针，未识别目标MCU（供电/接线/复位/SWD信号链需排查）"
+      },
+      {
+        "timestamp": "2026-03-30 18:20:53",
+        "text": "通信链路未建立。结合工程配置可确认APP走USART0(PA9/PA10,115200)，优先排查线序/地线/上电与是否进入APP。"
+      },
+      {
+        "timestamp": "2026-03-30 18:18:05",
+        "text": "工程当前为UART模式(MODE_WITH_BOOT=1, USART0 PA9/PA10)。需确认实际接线口、设备上电与是否进入APP态"
+      },
+      {
+        "timestamp": "2026-03-30 17:23:09",
+        "text": "COM3无响应：可能未烧录新固件/设备未在应用态/端口占用或端口不对"
+      },
+      {
+        "timestamp": "2026-03-30 17:21:25",
+        "text": "validate_stack/validate_cmd_router/validate_project_layout 均失败（路径漂移）"
+      }
+    ]
+  },
+  {
+    "id": "single-ref-project",
+    "name": "单发参考工程核对",
+    "path": "E:\\相位\\program\\gd303_refactor 双发 - 副本 (5)\\gd303_refactor 双发 - 副本 (5)",
+    "intro": "历史参考工程，用于对照引脚、配置和行为口径。",
+    "related_paths": [
+      "E:\\相位\\program\\gd303_refactor 双发 - 副本 (5)\\gd303_refactor 双发 - 副本 (5)",
+      "E:\\相位\\program\\green"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/single-ref-project/docs/alignment-baseline.html",
+        "title": "统一平台对齐台账",
+        "intro": "记录该参考工程与 unified 的对齐基线。"
+      },
+      {
+        "path": "projects/single-ref-project/docs/principle-diff.html",
+        "title": "三原理差异速览",
+        "intro": "用于核对当前工程口径属于哪种原理语义。"
+      }
+    ],
+    "last_stage": "alignment-baseline",
+    "last_status": "info",
+    "last_summary": "确认参考工程当前为双发口径，作为 unified 对齐参照基线",
+    "last_problem": "",
+    "last_updated": "2026-03-30 14:52:17",
+    "run_count": 8,
+    "fail_count": 1,
+    "open_problems": [
+      {
+        "timestamp": "2026-03-30 13:58:28",
+        "text": "command exit code: 2"
+      }
+    ]
+  },
+  {
+    "id": "bootloader-core",
+    "name": "Bootloader 管理",
+    "path": "E:\\相位\\program\\bootloader",
+    "intro": "Bootloader 协议、升级入口与应用握手管理项目。",
+    "related_paths": [
+      "E:\\相位\\program\\bootloader",
+      "E:\\相位\\program\\green\\boot_sdk"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/bootloader-core/docs/overview.html",
+        "title": "Bootloader 项目介绍",
+        "intro": "介绍 Bootloader 项目目标、范围和跟踪建议。"
+      },
+      {
+        "path": "projects/bootloader-core/docs/alignment-link.html",
+        "title": "统一平台对齐台账",
+        "intro": "记录与主平台关联的对齐项。"
+      }
+    ],
+    "last_stage": "docs-linked",
+    "last_status": "info",
+    "last_summary": "bootloader 项目已挂接介绍文档与路径层级",
+    "last_problem": "",
+    "last_updated": "2026-03-30 15:03:50",
+    "run_count": 3,
+    "fail_count": 0,
+    "open_problems": []
+  }
+]

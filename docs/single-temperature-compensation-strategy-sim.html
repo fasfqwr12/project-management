@@ -1,0 +1,339 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>统一平台单发温度补偿策略（模拟数据版）</title>
+  <link rel="stylesheet" href="./doc-style.css">
+  <style>
+    .toc {
+      margin: 10px 0 16px;
+      padding: 12px 14px;
+      background: #f7faff;
+      border: 1px solid #e4edf9;
+      border-radius: 10px;
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+      font-size: 14px;
+    }
+    .toc a { color: #205fcb; text-decoration: none; }
+    .toc a:hover { text-decoration: underline; }
+    .section-block {
+      margin-top: 18px;
+      padding-top: 10px;
+      border-top: 1px solid #e9eff8;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin: 10px 0 16px;
+      font-size: 14px;
+    }
+    th, td {
+      border: 1px solid #dce5f1;
+      padding: 8px 10px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th {
+      background: #f7faff;
+      white-space: nowrap;
+    }
+    .tag {
+      display: inline-block;
+      padding: 2px 8px;
+      border-radius: 999px;
+      background: #eef5ff;
+      color: #205fcb;
+      font-size: 12px;
+      font-weight: 600;
+      margin-right: 6px;
+    }
+    .good { color: #178246; font-weight: 600; }
+    .warn { color: #8a6700; font-weight: 600; }
+    .bad { color: #c53b2b; font-weight: 600; }
+    .formula {
+      background: #f7faff;
+      border: 1px solid #dce5f1;
+      border-left: 4px solid #205fcb;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0 14px;
+      font-family: Consolas, "Courier New", monospace;
+      font-size: 13px;
+      white-space: pre-wrap;
+    }
+    .note {
+      background: #fff9e8;
+      border: 1px solid #f0dfab;
+      border-radius: 8px;
+      padding: 12px 14px;
+      margin: 10px 0 14px;
+    }
+    .grid-2 {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+      gap: 14px;
+      margin: 10px 0 14px;
+    }
+    .mini-card {
+      border: 1px solid #dce5f1;
+      border-radius: 10px;
+      padding: 12px 14px;
+      background: #fbfdff;
+    }
+    code {
+      background: #f1f5fb;
+      padding: 1px 5px;
+      border-radius: 4px;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>统一平台单发温度补偿策略（模拟数据版）</h1>
+      <div class="meta">更新时间：2026-04-01；用途：单独记录 unified 平台单发温补策略、模拟数据口径、建模步骤与运行时执行链。</div>
+
+      <div class="toc">
+        <a href="#sec-goal">目标与口径</a>
+        <a href="#sec-principle">核心原则</a>
+        <a href="#sec-cal-ref">常温基准</a>
+        <a href="#sec-b6">B6 温扫模拟数据</a>
+        <a href="#sec-workpoint">工作点模型</a>
+        <a href="#sec-phase-table">相位补偿表</a>
+        <a href="#sec-runtime">测距执行流程</a>
+        <a href="#sec-formula">建议公式</a>
+        <a href="#sec-conclusion">结论</a>
+      </div>
+
+      <section id="sec-goal" class="section-block">
+        <h2>目标与口径</h2>
+        <ul>
+          <li><span class="tag">目标 1</span>不同温度下，同一距离的外光路幅值 <code>AX</code> 尽量一致。</li>
+          <li><span class="tag">目标 2</span>不同温度下，同一距离的 4 频相位补偿后尽量一致。</li>
+          <li><span class="tag">统一口径</span>先做 <code>工作点补偿</code>，再做 <code>相位补偿</code>，两层逻辑分开，不混成单一 <code>coeff</code>。</li>
+          <li><span class="tag">单发专用</span>单发以外光路为主，运行时先参考 <code>VBR</code> 粗定位，再用 <code>AX</code> 小闭环修正工作点。</li>
+        </ul>
+      </section>
+
+      <section id="sec-principle" class="section-block">
+        <h2>核心原则</h2>
+        <div class="grid-2">
+          <div class="mini-card">
+            <h3>为什么不能只看 coeff</h3>
+            <p>旧数据已经证明：同样的 <code>coeff = APD / VBR</code>，不同温度下 <code>AX</code> 仍会明显变化，所以 <code>coeff</code> 只能做辅助相对量，不能单独代表工作点。</p>
+          </div>
+          <div class="mini-card">
+            <h3>为什么先补工作点</h3>
+            <p>如果不同温度下增益状态都不一致，后面的相位补偿表会被“工作点漂移”污染，所以必须先把 <code>AX</code> 拉回同一区间，再做相位表补偿。</p>
+          </div>
+        </div>
+        <div class="note">
+          单发最终建议口径：<span class="good">本机常温基准 + 当前 VBR 相对变化 + 运行时 AX 小闭环 + 当前工作点相位查表</span>。
+        </div>
+      </section>
+
+      <section id="sec-cal-ref" class="section-block">
+        <h2>常温基准（模拟）</h2>
+        <table>
+          <thead>
+            <tr><th>项</th><th>模拟值</th><th>说明</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>基准温度</td><td>25°C</td><td>作为所有相对补偿零点</td></tr>
+            <tr><td><code>VBR_ref</code></td><td>900</td><td>常温击穿点编码</td></tr>
+            <tr><td><code>APD_work_ref</code></td><td>810</td><td>常温工作点编码</td></tr>
+            <tr><td><code>coeff_ref</code></td><td>0.900</td><td><code>810 / 900</code></td></tr>
+            <tr><td><code>AX_ref</code></td><td>18000</td><td>常温目标工作区幅值</td></tr>
+            <tr><td><code>P129/P134/P159/P160_ref</code></td><td>100.00 / 120.00 / 80.00 / 60.00</td><td>常温基准相位</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sec-b6" class="section-block">
+        <h2>B6 温扫模拟数据</h2>
+        <p>下面这组模拟数据用来说明原理，不是实机结果。结构与 <code>B6</code> 温扫保持一致：每个温度点记录 <code>temp / VBR / APD / AX / 4频相位</code>。</p>
+
+        <h3>温度点 A：25°C，VBR=900</h3>
+        <table>
+          <thead>
+            <tr><th>APD</th><th>coeff</th><th>AX</th><th>P129</th><th>P134</th><th>P159</th><th>P160</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>790</td><td>0.878</td><td>12000</td><td>100.80</td><td>120.65</td><td>80.40</td><td>60.32</td></tr>
+            <tr><td>800</td><td>0.889</td><td>15000</td><td>100.35</td><td>120.30</td><td>80.20</td><td>60.15</td></tr>
+            <tr><td>810</td><td>0.900</td><td>18000</td><td>100.00</td><td>120.00</td><td>80.00</td><td>60.00</td></tr>
+            <tr><td>820</td><td>0.911</td><td>22000</td><td>99.70</td><td>119.78</td><td>79.86</td><td>59.90</td></tr>
+            <tr><td>830</td><td>0.922</td><td>28000</td><td>99.45</td><td>119.60</td><td>79.75</td><td>59.82</td></tr>
+          </tbody>
+        </table>
+
+        <h3>温度点 B：45°C，VBR=930</h3>
+        <table>
+          <thead>
+            <tr><th>APD</th><th>coeff</th><th>AX</th><th>P129</th><th>P134</th><th>P159</th><th>P160</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>815</td><td>0.876</td><td>11800</td><td>101.25</td><td>120.95</td><td>80.55</td><td>60.40</td></tr>
+            <tr><td>825</td><td>0.887</td><td>14800</td><td>100.82</td><td>120.58</td><td>80.33</td><td>60.24</td></tr>
+            <tr><td>837</td><td>0.900</td><td>16600</td><td>100.55</td><td>120.35</td><td>80.18</td><td>60.12</td></tr>
+            <tr><td>850</td><td>0.914</td><td>20500</td><td>100.18</td><td>120.08</td><td>80.02</td><td>60.00</td></tr>
+            <tr><td>860</td><td>0.925</td><td>25500</td><td>99.95</td><td>119.92</td><td>79.92</td><td>59.93</td></tr>
+          </tbody>
+        </table>
+
+        <h3>温度点 C：65°C，VBR=960</h3>
+        <table>
+          <thead>
+            <tr><th>APD</th><th>coeff</th><th>AX</th><th>P129</th><th>P134</th><th>P159</th><th>P160</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>842</td><td>0.877</td><td>11600</td><td>101.80</td><td>121.35</td><td>80.78</td><td>60.62</td></tr>
+            <tr><td>852</td><td>0.888</td><td>14200</td><td>101.38</td><td>121.02</td><td>80.55</td><td>60.45</td></tr>
+            <tr><td>864</td><td>0.900</td><td>15400</td><td>101.05</td><td>120.78</td><td>80.40</td><td>60.31</td></tr>
+            <tr><td>878</td><td>0.915</td><td>19100</td><td>100.72</td><td>120.52</td><td>80.22</td><td>60.18</td></tr>
+            <tr><td>890</td><td>0.927</td><td>23800</td><td>100.45</td><td>120.30</td><td>80.08</td><td>60.06</td></tr>
+          </tbody>
+        </table>
+
+        <div class="note">
+          <span class="warn">关键观察：</span>当 <code>coeff=0.900</code> 时，<code>AX</code> 从 <code>18000 → 16600 → 15400</code>，说明单一 <code>APD/VBR</code> 不能单独代表工作点。
+        </div>
+      </section>
+
+      <section id="sec-workpoint" class="section-block">
+        <h2>工作点模型（先让幅值一致）</h2>
+        <p>目标工作区先固定为：<code>AX_target = 18000</code>。从每个温度点内部，反推出最接近目标幅值的工作 APD。</p>
+        <table>
+          <thead>
+            <tr><th>温度</th><th>VBR</th><th>目标 AX</th><th>推定工作 APD</th><th>结论</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>25°C</td><td>900</td><td>18000</td><td>810</td><td>常温基准</td></tr>
+            <tr><td>45°C</td><td>930</td><td>18000</td><td>843 左右</td><td>温升后 APD 要上移</td></tr>
+            <tr><td>65°C</td><td>960</td><td>18000</td><td>874 左右</td><td>继续上移</td></tr>
+          </tbody>
+        </table>
+
+        <div class="formula">工作点初始模型（模拟拟合）：
+APD_work_target ≈ APD_work_ref + 1.07 × (VBR_now - VBR_ref)
+
+代入：
+25°C: 810 + 1.07 × (900 - 900) = 810
+45°C: 810 + 1.07 × (930 - 900) = 842.1
+65°C: 810 + 1.07 × (960 - 900) = 874.2</div>
+
+        <p>这一步只负责把工作点先拉回“同一幅值工作区”，还没有处理相位。</p>
+      </section>
+
+      <section id="sec-phase-table" class="section-block">
+        <h2>相位补偿表（同温度下补 APD 偏移）</h2>
+        <p>在同一温度点内部，再看“工作点附近不同 APD”的相位变化。以下用 <code>45°C / VBR=930</code> 的 <code>P129</code> 做示例。</p>
+        <table>
+          <thead>
+            <tr><th>APD</th><th>AX</th><th>P129</th><th>相位标准点</th><th>补偿量 corr</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>825</td><td>14800</td><td>100.82</td><td>100.38</td><td>-0.44°</td></tr>
+            <tr><td>837</td><td>16600</td><td>100.55</td><td>100.38</td><td>-0.17°</td></tr>
+            <tr><td>843</td><td>18000</td><td>100.38</td><td>100.38</td><td>0.00°</td></tr>
+            <tr><td>850</td><td>20500</td><td>100.18</td><td>100.38</td><td>+0.20°</td></tr>
+            <tr><td>860</td><td>25500</td><td>99.95</td><td>100.38</td><td>+0.43°</td></tr>
+          </tbody>
+        </table>
+
+        <p>如果最终做成二维表，建议索引统一成：</p>
+        <div class="formula">phase_corr = f(freq, VBR_bin, AX_bin)</div>
+
+        <table>
+          <thead>
+            <tr><th>VBR 区间</th><th>AX=15000</th><th>AX=18000</th><th>AX=22000</th><th>说明</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>900</td><td>+0.35°</td><td>0.00°</td><td>-0.30°</td><td>常温区</td></tr>
+            <tr><td>930</td><td>+0.44°</td><td>0.00°</td><td>-0.20°</td><td>中温区</td></tr>
+            <tr><td>960</td><td>+0.58°</td><td>0.00°</td><td>-0.16°</td><td>高温区</td></tr>
+          </tbody>
+        </table>
+      </section>
+
+      <section id="sec-runtime" class="section-block">
+        <h2>测距时怎么执行（运行时闭环）</h2>
+        <table>
+          <thead>
+            <tr><th>步骤</th><th>输入</th><th>动作</th><th>输出</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>1. 读当前状态</td><td><code>VBR_now</code></td><td>先获取当前温度状态代表量</td><td><code>VBR_now</code></td></tr>
+            <tr><td>2. 求 APD 初值</td><td><code>VBR_now</code>、工作点模型</td><td>按模型求 <code>APD_init</code></td><td><code>APD_init</code></td></tr>
+            <tr><td>3. 幅值小闭环</td><td><code>APD_init</code>、<code>AX_target</code></td><td>打一枪看外光路 AX，不够就加 APD，过高就减 APD</td><td><code>APD_work_now</code>、<code>AX_now</code></td></tr>
+            <tr><td>4. 采 4 频相位</td><td><code>APD_work_now</code></td><td>采 <code>P129/P134/P159/P160</code></td><td>原始 4 频相位</td></tr>
+            <tr><td>5. 查相位表</td><td><code>freq + VBR_now + AX_now</code></td><td>命中二维补偿表</td><td><code>phase_corr[4]</code></td></tr>
+            <tr><td>6. 组合测距</td><td>补偿后相位</td><td>进入多频组合</td><td><code>dist</code>、<code>quality</code></td></tr>
+          </tbody>
+        </table>
+
+        <h3>运行时模拟例子</h3>
+        <div class="formula">已知：
+VBR_now = 930
+AX_target = 18000
+
+步骤：
+1) APD_init = 810 + 1.07 × (930 - 900) = 842
+2) 实测 AX_now = 17600，略低
+3) APD += 1，得到 APD_work_now = 843
+4) 再测 AX_now = 18100，已进入目标区
+5) 采 4 频 raw phase
+6) 按 (freq, VBR=930, AX≈18100) 查表补偿
+7) 用 final phase 做多频组合测距</div>
+      </section>
+
+      <section id="sec-formula" class="section-block">
+        <h2>建议公式（统一平台单发版）</h2>
+        <div class="formula">校准阶段保存：
+temp_ref
+vbr_ref
+apd_work_ref
+ax_ref
+phase_ref_table
+workpoint_comp_params
+phase_corr_table[freq][VBR_bin][AX_bin]
+
+运行时执行：
+1) vbr_now = read_vbr()
+2) apd_init = model_workpoint(vbr_now)
+3) ax_now = quick_sample_outer(apd_init)
+4) while ax_now 不在 target window:
+       apd_init += step(ax_target - ax_now)
+       ax_now = quick_sample_outer(apd_init)
+5) raw_phase[4] = capture_phase(apd_init)
+6) corr[4] = lookup_phase_corr(freq, vbr_now, ax_now)
+7) final_phase[4] = raw_phase[4] + corr[4]
+8) dist = combine_multi_freq(final_phase)</div>
+
+        <div class="note">
+          <span class="good">建议保留原则：</span>工作点控制以相对模型为主，绝对阈值只做保护。也就是 <code>VBR 相对变化 + AX 小闭环</code> 主导，<code>APD_min/max、AX_min/max、饱和阈值</code> 只负责防跑飞。
+        </div>
+      </section>
+
+      <section id="sec-conclusion" class="section-block">
+        <h2>结论</h2>
+        <ul>
+          <li>原策略方向是对的：<span class="good">先温扫建模，再工作点补偿，再同工作点相位补偿</span>。</li>
+          <li>需要明确统一平台口径：<span class="warn">不能再把单发温补简化成单一 coeff 逻辑</span>。</li>
+          <li>单发最稳的执行链应固定为：<code>VBR -> APD 初值 -> AX 小闭环 -> 相位查表 -> 组合测距</code>。</li>
+          <li>本页是模拟数据版，后续可继续追加“实机温扫版”和“固件映射版”。</li>
+        </ul>
+      </section>
+
+      <div class="nav">
+        <a href="./index.html">返回资料导航</a>
+        <a href="../projects/green-unified-single/docs/index.html">返回单发项目页</a>
+        <a href="../index.html">返回项目总览</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

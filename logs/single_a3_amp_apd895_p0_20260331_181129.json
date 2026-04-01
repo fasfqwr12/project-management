@@ -1,0 +1,210 @@
+{
+  "timestamp": "2026-03-31 18:11:53",
+  "port": "COM3",
+  "baud": 115200,
+  "apd": 895,
+  "pwr": 0,
+  "repeat": 5,
+  "results": {
+    "F0": {
+      "fi": 0,
+      "peaks": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avg_peak": 0.0,
+      "min_peak": 0,
+      "max_peak": 0,
+      "runs": [
+        {
+          "run_index": 1,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 00 DF BB FF"
+        },
+        {
+          "run_index": 2,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 00 DF BB FF"
+        },
+        {
+          "run_index": 3,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 00 DF BB FF"
+        },
+        {
+          "run_index": 4,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 00 DF BB FF"
+        },
+        {
+          "run_index": 5,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 00 DF BB FF"
+        }
+      ]
+    },
+    "F1": {
+      "fi": 1,
+      "peaks": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avg_peak": 0.0,
+      "min_peak": 0,
+      "max_peak": 0,
+      "runs": [
+        {
+          "run_index": 1,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 01 DE BB FF"
+        },
+        {
+          "run_index": 2,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 01 DE BB FF"
+        },
+        {
+          "run_index": 3,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 01 DE BB FF"
+        },
+        {
+          "run_index": 4,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 01 DE BB FF"
+        },
+        {
+          "run_index": 5,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 01 DE BB FF"
+        }
+      ]
+    },
+    "F2": {
+      "fi": 2,
+      "peaks": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avg_peak": 0.0,
+      "min_peak": 0,
+      "max_peak": 0,
+      "runs": [
+        {
+          "run_index": 1,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 02 DD BB FF"
+        },
+        {
+          "run_index": 2,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 02 DD BB FF"
+        },
+        {
+          "run_index": 3,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 02 DD BB FF"
+        },
+        {
+          "run_index": 4,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 02 DD BB FF"
+        },
+        {
+          "run_index": 5,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 02 DD BB FF"
+        }
+      ]
+    },
+    "F3": {
+      "fi": 3,
+      "peaks": [
+        0,
+        0,
+        0,
+        0,
+        0
+      ],
+      "avg_peak": 0.0,
+      "min_peak": 0,
+      "max_peak": 0,
+      "runs": [
+        {
+          "run_index": 1,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 03 DC BB FF"
+        },
+        {
+          "run_index": 2,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 03 DC BB FF"
+        },
+        {
+          "run_index": 3,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 03 DC BB FF"
+        },
+        {
+          "run_index": 4,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 03 DC BB FF"
+        },
+        {
+          "run_index": 5,
+          "peak": 0,
+          "sample_count": 0,
+          "rx_frames": 0,
+          "tx": "AA EE A3 00 03 7F 03 DC BB FF"
+        }
+      ]
+    }
+  }
+}

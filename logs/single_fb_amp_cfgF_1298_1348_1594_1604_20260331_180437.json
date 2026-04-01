@@ -1,0 +1,29 @@
+{
+  "config_name": "cfgF_1298_1348_1594_1604",
+  "timestamp": "2026-03-31 18:04:50",
+  "port": "COM3",
+  "baud": 115200,
+  "fb_mode": 1,
+  "repeat": 1,
+  "runs": [
+    {
+      "amps": {
+        "F3": 19900,
+        "F2": 19550,
+        "F1": 10600,
+        "F0": 8950
+      },
+      "dist_mm": 5007,
+      "apd": 961,
+      "pwr": 0,
+      "line_fb": "[FB] st=0 dist_mm=5007 amp=19900 range_mm=3 q=1000 apd=961 shots=1/1 retry=0 pwr=0",
+      "run_index": 1
+    }
+  ],
+  "avg_amp": {
+    "F0": 8950,
+    "F1": 10600,
+    "F2": 19550,
+    "F3": 19900
+  }
+}

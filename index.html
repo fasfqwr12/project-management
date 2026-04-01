@@ -1,0 +1,63 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>项目管理总览</title>
+  <link rel="stylesheet" href="./assets/pm.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h1>项目管理</h1>
+      <p id="syncTime">同步中...</p>
+      <nav id="projectMenu"></nav>
+    </aside>
+    <main class="main">
+      <header class="head">
+        <h2>总览</h2>
+        <div>
+          <a href="./docs/index.html" style="margin-right:10px;">资料导航</a>
+          <button id="refreshBtn" type="button">刷新</button>
+        </div>
+      </header>
+      <section class="cards">
+        <article class="card"><h3>项目数</h3><p id="projectCount">0</p></article>
+        <article class="card"><h3>总运行次数</h3><p id="runCount">0</p></article>
+        <article class="card"><h3>总失败次数</h3><p id="failCount">0</p></article>
+      </section>
+      <section class="panel">
+        <h3>中文备注</h3>
+        <ul>
+          <li><strong>地址索引</strong>：项目实际代码目录（用于快速定位）。</li>
+          <li><strong>项目介绍</strong>：这个项目主要负责什么。</li>
+          <li><strong>最近阶段</strong>：当前推进到哪一步。</li>
+          <li><strong>最近状态</strong>：`info`=进行中/记录，`pass`=通过，`fail`=失败待处理。</li>
+          <li><strong>层级展开</strong>：点开可看相关路径和相关资料文档。</li>
+          <li><strong>项目目录结构</strong>：每个项目固定包含 <code>docs/</code>、<code>reports/</code>、<code>logs/</code>、<code>data/</code>。</li>
+        </ul>
+      </section>
+      <section class="panel">
+        <h3>项目状态</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>项目</th>
+              <th>地址索引</th>
+              <th>项目介绍</th>
+              <th>层级展开</th>
+              <th>最近阶段</th>
+              <th>最近状态</th>
+              <th>更新时间</th>
+              <th>进入</th>
+            </tr>
+          </thead>
+          <tbody id="projectRows"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="./data/data.js"></script>
+  <script src="./assets/index.js"></script>
+</body>
+</html>

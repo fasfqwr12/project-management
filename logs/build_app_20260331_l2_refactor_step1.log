@@ -1,0 +1,17 @@
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'd:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'GreenLaser_Unified'
+Before Build - User command #1: python boot_sdk\tools\generate_sct.py
+[generate_sct] 解析 config.h...
+[generate_sct] 检测到模式: uart
+[generate_sct] linker.sct 无变化，跳过写入
+[generate_sct] 生成 linker.sct:
+  ROM: 0x08002000, 116KB
+  RAM: 0x20000000, 32KB
+[generate_sct] 完成!
+compiling hw_system.c...
+hw_system\hw_system.c(336): error:  #159: declaration is incompatible with previous "hw_reset_current_config"  (declared at line 133)
+  static void hw_reset_current_config(void)
+hw_system\hw_system.c: 0 warnings, 1 error
+".\output\GreenLaser_Unified.axf" - 1 Error(s), 0 Warning(s).
+Target not created.
+Build Time Elapsed:  00:00:02

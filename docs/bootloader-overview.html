@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootloader 项目介绍</title>
+  <link rel="stylesheet" href="./doc-style.css">
+</head>
+<body>
+  <div class="wrap">
+    <div class="card">
+      <h1>Bootloader 项目介绍</h1>
+      <div class="meta">资料说明：介绍 Bootloader 项目的目标、范围和跟踪建议。</div>
+
+      <h2>项目索引地址</h2>
+      <p><code>E:\相位\program\bootloader</code></p>
+
+      <h2>项目目标</h2>
+      <ul>
+        <li>管理升级入口和应用跳转流程。</li>
+        <li>对齐升级协议帧定义与握手行为。</li>
+        <li>保障升级失败可回退和版本可追踪。</li>
+      </ul>
+
+      <h2>跟踪建议</h2>
+      <ul>
+        <li>按阶段记录：协议确认 → 串口联调 → 升级回归 → 异常恢复。</li>
+        <li>每条记录带命令、结果、问题、结论。</li>
+      </ul>
+
+      <div class="nav">
+        <a href="./index.html">资料导航</a>
+        <a href="../index.html">返回项目总览</a>
+        <a href="./platform-alignment-log.html">查看对齐台账</a>
+        <a href="./principle-diff.html">查看三原理差异</a>
+      </div>
+    </div>
+  </div>
+</body>
+</html>

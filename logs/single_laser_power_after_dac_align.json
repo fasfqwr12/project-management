@@ -1,0 +1,63 @@
+{
+  "port": "COM3",
+  "baud": 115200,
+  "timestamp": "2026-03-30 20:18:00",
+  "results": [
+    {
+      "seq": 1,
+      "cmd": "F7",
+      "ok": true,
+      "rsp": "AA FE F7 30 81 90 3F F7 00 03 00 01 00 01 00 00 47 72 65 65 6E 2D 53 47",
+      "text_head": "0?\u0000\u0003\u0000\u0001\u0000\u0001\u0000\u0000Green-SGL-150m\u0000\u0000\u0000\u0000\u0002\u0000\u0000 \u0000\b\u0000\u0001\u0000P\u0003\u0001\u00009*",
+      "hex_head": "AA FE F7 30 81 90 3F F7 00 03 00 01 00 01 00 00 47 72 65 65 6E 2D 53 47 4C 2D 31 35 30 6D 00 00 00 00 02 00 00 20 00 08 00 D0 01 00 50 03 01 00 39 A4 2A 9B C2 BB FF"
+    },
+    {
+      "seq": 2,
+      "cmd": "F0",
+      "ok": true,
+      "rsp": "AA FE F0 00 FF 00 00 0F BB FF",
+      "text_head": "[F0] legacy start path=keep power=low\r\n[HW] START rule=3 path=-1 power=0 apd=-1 adc=-1 reason=power ref=1\r\n\u0000\u0000\u0000\u000f",
+      "hex_head": "5B 46 30 5D 20 6C 65 67 61 63 79 20 73 74 61 72 74 20 70 61 74 68 3D 6B 65 65 70 20 70 6F 77 65 72 3D 6C 6F 77 0D 0A 5B 48 57 5D 20 53 54 41 52 54 20 72 75 6C 65 3D 33 20 70 61 74 68 3D 2D 31 20 70 6F 77 65 72 3D 30 20 61 70 64 3D 2D 31 20 61 64 63 3D 2D 31 20 72 65 61 73 6F 6E 3D 70 6F 77 65 72 20 72 65 66 3D 31 0D 0A AA FE F0 00 FF 00 00 0F BB FF"
+    },
+    {
+      "seq": 3,
+      "cmd": "AD",
+      "ok": true,
+      "rsp": "AA FE AD 01 00 00 00 AC BB FF",
+      "text_head": "[AD] state=1 path=inner power=0\r\n\u0001\u0000\u0000\u0000",
+      "hex_head": "5B 41 44 5D 20 73 74 61 74 65 3D 31 20 70 61 74 68 3D 69 6E 6E 65 72 20 70 6F 77 65 72 3D 30 0D 0A AA FE AD 01 00 00 00 AC BB FF"
+    },
+    {
+      "seq": 4,
+      "cmd": "AD",
+      "ok": true,
+      "rsp": "AA FE AD 02 00 00 00 AF BB FF",
+      "text_head": "[AD] state=2 path=inner power=1\r\n\u0002\u0000\u0000\u0000",
+      "hex_head": "5B 41 44 5D 20 73 74 61 74 65 3D 32 20 70 61 74 68 3D 69 6E 6E 65 72 20 70 6F 77 65 72 3D 31 0D 0A AA FE AD 02 00 00 00 AF BB FF"
+    },
+    {
+      "seq": 5,
+      "cmd": "AE",
+      "ok": true,
+      "rsp": "AA FE AE 01 00 00 00 AF BB FF",
+      "text_head": "[AE] state=1 path=outer power=0\r\n\u0001\u0000\u0000\u0000",
+      "hex_head": "5B 41 45 5D 20 73 74 61 74 65 3D 31 20 70 61 74 68 3D 6F 75 74 65 72 20 70 6F 77 65 72 3D 30 0D 0A AA FE AE 01 00 00 00 AF BB FF"
+    },
+    {
+      "seq": 6,
+      "cmd": "AE",
+      "ok": true,
+      "rsp": "AA FE AE 02 00 00 00 AC BB FF",
+      "text_head": "[AE] state=2 path=outer power=1\r\n\u0002\u0000\u0000\u0000",
+      "hex_head": "5B 41 45 5D 20 73 74 61 74 65 3D 32 20 70 61 74 68 3D 6F 75 74 65 72 20 70 6F 77 65 72 3D 31 0D 0A AA FE AE 02 00 00 00 AC BB FF"
+    },
+    {
+      "seq": 7,
+      "cmd": "F6",
+      "ok": true,
+      "rsp": "AA FE F6 00 00 00 00 F6 BB FF",
+      "text_head": "\u0000\u0000\u0000\u0000",
+      "hex_head": "AA FE F6 00 00 00 00 F6 BB FF"
+    }
+  ]
+}

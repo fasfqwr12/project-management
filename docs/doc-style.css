@@ -1,0 +1,49 @@
+body {
+  margin: 0;
+  font-family: "Segoe UI", "Microsoft YaHei", sans-serif;
+  color: #152238;
+  background: #f3f6fb;
+}
+
+.wrap {
+  max-width: 980px;
+  margin: 24px auto;
+  padding: 0 16px 24px;
+}
+
+.card {
+  background: #fff;
+  border: 1px solid #dce5f1;
+  border-radius: 12px;
+  padding: 18px;
+  box-shadow: 0 4px 16px rgba(17, 33, 58, 0.06);
+}
+
+h1 { margin: 0 0 6px; font-size: 28px; }
+h2 { margin: 18px 0 8px; font-size: 20px; }
+p { line-height: 1.65; }
+li { margin: 6px 0; }
+
+.meta {
+  color: #5f7392;
+  font-size: 13px;
+  margin-bottom: 12px;
+}
+
+.nav {
+  margin-top: 16px;
+  padding-top: 12px;
+  border-top: 1px solid #e9eff8;
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+
+.nav a {
+  color: #205fcb;
+  text-decoration: none;
+}
+
+.nav a:hover {
+  text-decoration: underline;
+}

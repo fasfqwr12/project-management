@@ -1,0 +1,80 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>项目详情</title>
+  <link rel="stylesheet" href="../../assets/pm.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h1>项目详情</h1>
+      <p id="syncTime">同步中...</p>
+      <a class="menu-item" href="../../index.html">返回总览</a>
+    </aside>
+    <main class="main">
+      <header class="head">
+        <h2 id="title">项目1</h2>
+        <button id="refreshBtn" type="button">刷新</button>
+      </header>
+      <section class="panel">
+        <h3>项目索引</h3>
+        <p><strong>地址：</strong><span id="projectPath">-</span></p>
+        <p><strong>介绍：</strong><span id="projectIntro">-</span></p>
+      </section>
+      <section class="panel">
+        <h3>中文备注</h3>
+        <ul>
+          <li><strong>相关路径</strong>：和该项目直接关联的代码目录。</li>
+          <li><strong>相关资料</strong>：该项目的说明文档、台账文档。</li>
+          <li><strong>问题记录</strong>：当前未闭环的问题列表。</li>
+          <li><strong>运行明细</strong>：每次执行记录（时间、阶段、状态、摘要、问题）。</li>
+          <li><strong>按阶段展开</strong>：按 `stage` 分组查看历史推进过程。</li>
+        </ul>
+      </section>
+      <section class="panel">
+        <h3>层级结构</h3>
+        <details open>
+          <summary>相关路径</summary>
+          <ul id="relatedPathList"></ul>
+        </details>
+        <details style="margin-top:8px;">
+          <summary>相关资料</summary>
+          <ul id="relatedDocList"></ul>
+        </details>
+      </section>
+      <section class="cards">
+        <article class="card"><h3>最近状态</h3><p id="lastStatus">-</p></article>
+        <article class="card"><h3>最近阶段</h3><p id="lastStage">-</p></article>
+        <article class="card"><h3>失败次数</h3><p id="failCount">0</p></article>
+      </section>
+      <section class="panel">
+        <h3>问题记录</h3>
+        <ul id="problemList"></ul>
+      </section>
+      <section class="panel">
+        <h3>运行明细</h3>
+        <table>
+          <thead>
+            <tr>
+              <th>时间</th>
+              <th>阶段</th>
+              <th>状态</th>
+              <th>摘要</th>
+              <th>问题</th>
+            </tr>
+          </thead>
+          <tbody id="runRows"></tbody>
+        </table>
+      </section>
+      <section class="panel">
+        <h3>按阶段展开</h3>
+        <div id="stageGroups"></div>
+      </section>
+    </main>
+  </div>
+  <script src="../../data/data.js"></script>
+  <script src="./assets/project.js"></script>
+</body>
+</html>

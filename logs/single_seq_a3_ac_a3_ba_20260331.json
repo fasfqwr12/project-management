@@ -1,0 +1,35 @@
+{
+  "port": "COM3",
+  "baud": 115200,
+  "results": [
+    {
+      "step": "A3_default",
+      "bytes": 107,
+      "frame_count": 1,
+      "first_rsp": "AA FE A3 FE 00 00 00 5D BB FF",
+      "log": "[A3] capture fail rc=-1 state=2 err=0 ref=60 reason=adc-noop rule=3 path=1 pwr=0 apd=1190 adc=0  ￣\u0000\u0000\u0000]"
+    },
+    {
+      "step": "AC",
+      "bytes": 1830,
+      "frame_count": 1,
+      "first_rsp": "AA FE AC 09 01 00 00 04 A6 00 00 04 A6 A4 BB FF",
+      "log": "[APD] REQ mode=LL(0) path=inner(0) start_apd=600 use_cache=0 inner_vbr=1  [APD] VBR scan begin src=none path=1 force=0 start_apd=1200 cached=700 fresh=0  [VBR] BEGIN: keep pll on, laser power off  [HW] REJECT type=1 rule=0 path=1 power=2 apd=1200 adc=0 reason=invalid-config ref=59  [APD] VBR prepare fail path=1 err=5 start_session=1  [APD] REQ done mode=LL(0) path=inner(0) apd=0  [APD] REQ mode=LL(0) path=outer(1) start_apd=0 use_cache=0 inner_vbr=0  [APD] GEN hw req=config rule=3 path=1 pwr=0 apd=600 ref=59 active=1  [APD] GEN begin path=outer(1) pwr=LL(0) start_apd=600 use_cache=0 target=[30"
+    },
+    {
+      "step": "A3_best",
+      "bytes": 107,
+      "frame_count": 1,
+      "first_rsp": "AA FE A3 FE 00 00 00 5D BB FF",
+      "log": "[A3] capture fail rc=-1 state=2 err=0 ref=60 reason=adc-noop rule=3 path=1 pwr=0 apd=1190 adc=0  ￣\u0000\u0000\u0000]",
+      "used_apd": 1190
+    },
+    {
+      "step": "BA",
+      "bytes": 135,
+      "frame_count": 1,
+      "first_rsp": "AA FE BA 00 00 00 14 AE BB FF",
+      "log": "[BA] temp=-34.30 freq=3 diff=81.0 out=81.0 in=81.0 pur=0 cv=0.0 shk=0.0 amp=0/0 hv_raw=0 hv_std=0 hv=0.00 t=5200ms apd=1190  \u0000\u0000\u0000\u0014"
+    }
+  ]
+}

@@ -1,0 +1,29 @@
+{
+  "config_name": "clean_baseline_cfgA",
+  "timestamp": "2026-03-31 17:41:44",
+  "port": "COM3",
+  "baud": 115200,
+  "fb_mode": 1,
+  "repeat": 1,
+  "runs": [
+    {
+      "amps": {
+        "F3": 18200,
+        "F2": 18150,
+        "F1": 57350,
+        "F0": 56300
+      },
+      "dist_mm": 5009,
+      "apd": 896,
+      "pwr": 0,
+      "line_fb": "[FB] st=0 dist_mm=5009 amp=18200 range_mm=6 q=1000 apd=896 shots=1/1 retry=0 pwr=0",
+      "run_index": 1
+    }
+  ],
+  "avg_amp": {
+    "F0": 56300,
+    "F1": 57350,
+    "F2": 18150,
+    "F3": 18200
+  }
+}

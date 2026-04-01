@@ -1,0 +1,41 @@
+:root {
+  --bg: #f2f5fa;
+  --panel: #ffffff;
+  --line: #dbe3ef;
+  --text: #152238;
+  --sub: #6a7d99;
+  --accent: #1d5fd0;
+  --ok: #128a45;
+  --fail: #c6382c;
+}
+* { box-sizing: border-box; }
+body { margin: 0; font-family: "Segoe UI", "Microsoft YaHei", sans-serif; color: var(--text); background: var(--bg); }
+.layout { min-height: 100vh; display: grid; grid-template-columns: 280px 1fr; }
+.sidebar { background: #11213a; color: #eef4ff; padding: 16px; }
+.sidebar h1 { margin: 0; font-size: 20px; }
+.sidebar p { margin: 8px 0 0 0; color: #bdd0ef; font-size: 12px; }
+.menu-item { margin-top: 10px; width: 100%; display: block; text-decoration: none; color: #eff4ff; background: #1a2d4f; border: 1px solid #27426f; border-radius: 8px; padding: 10px; }
+.menu-item:hover { border-color: #6b97de; }
+.main { padding: 18px; }
+.head { display: flex; align-items: center; justify-content: space-between; }
+.head h2 { margin: 0; font-size: 24px; }
+.head button { border: 1px solid var(--accent); background: var(--accent); color: #fff; border-radius: 8px; padding: 8px 12px; cursor: pointer; }
+.cards { margin-top: 14px; display: grid; grid-template-columns: repeat(3, minmax(120px, 1fr)); gap: 10px; }
+.card, .panel { background: var(--panel); border: 1px solid var(--line); border-radius: 10px; }
+.card { padding: 12px; }
+.card h3 { margin: 0; color: var(--sub); font-size: 13px; }
+.card p { margin: 8px 0 0 0; font-size: 22px; font-weight: 700; }
+.panel { margin-top: 12px; padding: 12px; }
+table { width: 100%; border-collapse: collapse; font-size: 13px; }
+th, td { border-bottom: 1px solid #edf2fa; padding: 8px; text-align: left; vertical-align: top; }
+th { color: var(--sub); font-weight: 600; }
+.panel details { background: #f8fbff; border: 1px solid #e7effb; border-radius: 8px; padding: 8px; }
+.panel summary { cursor: pointer; color: #274c86; font-weight: 600; }
+.panel ul { margin: 8px 0 0 18px; padding: 0; }
+.panel li { margin: 4px 0; }
+.status-pass { color: var(--ok); font-weight: 700; }
+.status-fail { color: var(--fail); font-weight: 700; }
+.status-info { color: var(--sub); font-weight: 700; }
+@media (max-width: 900px) {
+  .layout { grid-template-columns: 1fr; }
+}

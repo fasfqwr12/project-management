@@ -1,0 +1,42 @@
+*** Using Compiler 'V5.06 update 6 (build 750)', folder: 'd:\Keil_v5\ARM\ARMCC\Bin'
+Build target 'GreenLaser_Unified'
+Before Build - User command #1: python boot_sdk\tools\generate_sct.py
+[generate_sct] 解析 config.h...
+[generate_sct] 检测到模式: uart
+[generate_sct] linker.sct 无变化，跳过写入
+[generate_sct] 生成 linker.sct:
+  ROM: 0x08002000, 116KB
+  RAM: 0x20000000, 32KB
+[generate_sct] 完成!
+compiling cal_engine.c...
+calibration\cal_engine.c(745): warning:  #177-D: variable "apd_source"  was declared but never referenced
+          uint16_t apd_source = bestapd;
+calibration\cal_engine.c: 1 warning, 0 errors
+linking...
+Program Size: Code=62412 RO-data=9212 RW-data=284 ZI-data=11692  
+FromELF: creating hex file...
+After Build - User command #1: python boot_sdk\tools\post_build.py .\output\GreenLaser_Unified.hex
+[post_build] 处理: .\output\GreenLaser_Unified.hex
+[post_build] 地址范围: 0x08002000 - 0x080138E4
+[post_build] 固件大小: 71908 bytes (70.22 KB)
+[post_build] CRC32: 0xA459D75A
+[post_build] GreenLaser_Unified.hex updated
+[post_build] AXF更新位置: 0x234 (旧size=0xFFFFFFFF, 旧crc=0xFFFFFFFF)
+[post_build] AXF文件已更新: .\output\GreenLaser_Unified.axf
+[post_build] AXF更新位置: 0x234 (旧size=0x000118E4, 旧crc=0xA459D75A)
+[post_build] AXF文件已更新: E:\相位\program\green\output\GreenLaser_Unified.axf
+[post_build] AXF中未找到元数据 (FIRM魔数)
+[post_build] 完成! app_size=0x000118E4, app_crc=0xA459D75A
+[post_build] 自动加密: .\output\GreenLaser_Unified.hex → .\output\GreenLaser_Unified.enc
+Parse HEX: start=0x08002000, size=71908 bytes
+Encryption complete!
+  Input: .\output\GreenLaser_Unified.hex
+  Output: .\output\GreenLaser_Unified.enc
+  Size: 71908 bytes (70.2 KB)
+  Original CRC: 0x8DD8643A
+  Encrypted CRC: 0xFAE5932B
+  Firmware Version: V1.0.0
+  Model: Green-SGL-150m
+[post_build] 加密完成: .\output\GreenLaser_Unified.enc
+".\output\GreenLaser_Unified.axf" - 0 Error(s), 1 Warning(s).
+Build Time Elapsed:  00:00:05

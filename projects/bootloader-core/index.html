@@ -1,0 +1,57 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>项目 - Bootloader 管理</title>
+  <link rel="stylesheet" href="../../assets/pm.css">
+</head>
+<body>
+  <div class="layout">
+    <aside class="sidebar">
+      <h1>项目页</h1>
+      <p id="loadError"></p>
+      <a class="menu-item" href="../../index.html">返回总览</a>
+      <a class="menu-item" href="./docs/index.html">项目资料导航</a>
+    </aside>
+    <main class="main">
+      <header class="head">
+        <h2 id="title">项目</h2>
+      </header>
+      <section class="panel">
+        <h3>项目索引</h3>
+        <p><strong>ID：</strong><span id="projectId">-</span></p>
+        <p><strong>地址：</strong><span id="projectPath">-</span></p>
+        <p><strong>介绍：</strong><span id="projectIntro">-</span></p>
+      </section>
+      <section class="cards">
+        <article class="card"><h3>最近阶段</h3><p id="lastStage">-</p></article>
+        <article class="card"><h3>最近状态</h3><p id="lastStatus">-</p></article>
+        <article class="card"><h3>运行次数</h3><p id="runCount">0</p></article>
+      </section>
+      <section class="panel">
+        <h3>固定结构（每个项目都一致）</h3>
+        <ul id="fixedStructure"></ul>
+      </section>
+      <section class="panel">
+        <h3>本项目资料（可继续跳转）</h3>
+        <ul id="docList"></ul>
+      </section>
+      <section class="panel">
+        <h3>相关路径</h3>
+        <ul id="relatedPathList"></ul>
+      </section>
+      <section class="panel">
+        <h3>跟踪记录</h3>
+        <table>
+          <thead>
+            <tr><th>时间</th><th>阶段</th><th>状态</th><th>摘要</th><th>问题</th></tr>
+          </thead>
+          <tbody id="runRows"></tbody>
+        </table>
+      </section>
+    </main>
+  </div>
+  <script src="../../assets/project-shell.js"></script>
+</body>
+</html>

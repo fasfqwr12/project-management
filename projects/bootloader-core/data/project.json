@@ -1,0 +1,30 @@
+{
+  "id": "bootloader-core",
+  "name": "Bootloader 管理",
+  "path": "E:\\相位\\program\\bootloader",
+  "intro": "Bootloader 协议、升级入口与应用握手管理项目。",
+  "related_paths": [
+    "E:\\相位\\program\\bootloader",
+    "E:\\相位\\program\\green\\boot_sdk"
+  ],
+  "related_docs": [
+    {
+      "path": "docs/overview.html",
+      "title": "Bootloader 项目介绍",
+      "intro": "项目目标、范围、阶段和建议跟踪方式。"
+    },
+    {
+      "path": "docs/alignment-link.html",
+      "title": "与平台对齐关系",
+      "intro": "说明 Bootloader 与统一平台对齐的关联点。"
+    },
+    {
+      "path": "docs/index.html",
+      "title": "项目资料导航",
+      "intro": "进入本项目资料目录，继续逐层跳转。"
+    }
+  ],
+  "last_stage": "docs-linked",
+  "last_status": "info",
+  "run_count": 3
+}
