@@ -1,0 +1,39 @@
+{
+  "id": "repo-html-debug",
+  "name": "html-debug",
+  "path": "E:\\phase1\\html-debug(1)\\html-debug",
+  "intro": "HTML 调试页面与联调资料仓库。",
+  "related_paths": [
+    "E:\\phase1\\html-debug(1)\\html-debug"
+  ],
+  "related_docs": [
+    {
+      "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+      "title": "日报 2026-04-29",
+      "intro": "查看当天巡检快照与改动样本。"
+    },
+    {
+      "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+      "title": "同步建议 2026-04-29",
+      "intro": "查看该仓库今天是否建议提交/推送。"
+    },
+    {
+      "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+      "title": "待确认提交队列 2026-04-29",
+      "intro": "从统一队列进入该仓库的提交确认流程。"
+    }
+  ],
+  "last_stage": "repo-daily-scan",
+  "last_status": "pass",
+  "last_summary": "2026-04-29 html-debug：分支 master，最近提交 d3a35732 Initial import: html-debug",
+  "last_problem": "",
+  "last_updated": "2026-04-29 18:01:05",
+  "run_count": 12,
+  "fail_count": 2,
+  "open_problems": [],
+  "sync_recommendation": "no-action",
+  "sync_recommendation_label": "无需推送",
+  "sync_recommendation_reason": "当前本地与远端一致",
+  "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：无需推送",
+  "scan_memory_changed": false
+}

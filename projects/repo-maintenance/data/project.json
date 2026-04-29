@@ -1,0 +1,86 @@
+{
+  "id": "repo-maintenance",
+  "name": "仓库维护巡检",
+  "path": "E:\\phase1",
+  "intro": "每日 17:00 轮询维护集合仓库；周报在每周最后一个工作日生成，并跳过法定节假日。",
+  "related_paths": [
+    "E:\\phase1\\progress\\project-management",
+    "E:\\phase1\\archives\\project-archives",
+    "E:\\phase1\\html-debug(1)\\html-debug",
+    "E:\\phase1\\debug_toll\\sim_tool",
+    "E:\\phase1\\debug_toll\\serial_web_upper_desktop",
+    "E:\\phase1\\debug_toll\\phaseplatform",
+    "E:\\phase1\\debug_toll\\laser_factory_platform",
+    "E:\\phase1\\green_updater",
+    "E:\\phase1\\medical_review_platform",
+    "E:\\phase1\\debug_toll\\code-map-workbench",
+    "E:\\phase1\\debug_toll\\unified-tool",
+    "E:\\phase1\\program\\J2N4C-150L",
+    "E:\\phase1\\program\\bootloader\\bootloader",
+    "E:\\phase1\\program\\green-lcd-5key",
+    "E:\\phase1\\tmp\\skills-cloud"
+  ],
+  "related_docs": [
+    {
+      "path": "projects/repo-maintenance/docs/overview.md",
+      "title": "自动巡检说明",
+      "intro": "查看每日 17:00 巡检、最后工作日周报与节假日跳过规则。"
+    },
+    {
+      "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+      "title": "日报 2026-04-29",
+      "intro": "查看当天 git fetch/status 巡检结果。"
+    },
+    {
+      "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+      "title": "同步建议 2026-04-29",
+      "intro": "给人工评审后的提交/推送建议清单。"
+    },
+    {
+      "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+      "title": "待确认提交队列 2026-04-29",
+      "intro": "按仓库进入确认提交、先 pull 或继续开发流程。"
+    }
+  ],
+  "last_stage": "daily-repo-maintenance",
+  "last_status": "info",
+  "last_summary": "2026-04-29 巡检 15 仓：干净 8，需关注 7，fetch失败 0，待评审推送 6，先同步远端 1",
+  "last_problem": "project-management(dirty 210); laser_factory_platform(dirty 13); medical_review_platform(dirty 7); J2N4C-150L(dirty 41); bootloader(dirty 11); green-lcd-5key(dirty 2); skills(behind 30, dirty 8)",
+  "last_updated": "2026-04-29 18:01:05",
+  "run_count": 29,
+  "fail_count": 4,
+  "open_problems": [
+    {
+      "timestamp": "2026-04-29 18:01:05",
+      "text": "project-management: dirty 210"
+    },
+    {
+      "timestamp": "2026-04-29 18:01:05",
+      "text": "laser_factory_platform: dirty 13"
+    },
+    {
+      "timestamp": "2026-04-29 18:01:05",
+      "text": "medical_review_platform: dirty 7"
+    },
+    {
+      "timestamp": "2026-04-29 18:01:05",
+      "text": "J2N4C-150L: dirty 41"
+    },
+    {
+      "timestamp": "2026-04-29 18:01:05",
+      "text": "bootloader: dirty 11"
+    },
+    {
+      "timestamp": "2026-04-29 18:01:05",
+      "text": "green-lcd-5key: dirty 2"
+    },
+    {
+      "timestamp": "2026-04-29 18:01:05",
+      "text": "skills: behind 30, dirty 8"
+    }
+  ],
+  "sync_recommendation": "review-repos",
+  "sync_recommendation_label": "查看待确认提交队列",
+  "sync_recommendation_reason": "今日待评审推送 6 仓，先同步远端 1 仓，无需推送 8 仓",
+  "scan_memory_note": "本次复用 15 仓上次结论，仅对状态变化仓库更新记忆。"
+}

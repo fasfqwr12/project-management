@@ -3,7 +3,7 @@
     "id": "green-unified-single",
     "name": "Unified 平台单发调试",
     "path": "E:\\相位\\program\\green",
-    "intro": "统一平台主工程，当前用于单发能力接入与兼容调试。",
+    "intro": "统一平台主工程，资料已按单发 / 双发 / 双收分组，当前用于单发能力接入与兼容调试。",
     "related_paths": [
       "E:\\相位\\program\\green",
       "E:\\相位\\program\\gd303_refactor 双发 - 副本 (5)\\gd303_refactor 双发 - 副本 (5)",
@@ -12,16 +12,31 @@
     "related_docs": [
       {
         "path": "projects/green-unified-single/docs/index.html",
-        "title": "单页总台账（可搜索/分章节）",
-        "intro": "一个页面查看全部内容：任务总览、三原理差异、单发引脚状态、流程边界与执行清单。"
+        "title": "分原理资料台账（左菜单）",
+        "intro": "统一入口，按单发 / 双发 / 双收查看现有资料和台账。"
+      },
+      {
+        "path": "projects/green-unified-single/docs/index.html#sec-single-ledger",
+        "title": "单发资料入口",
+        "intro": "查看单发引脚状态、温补、S1 与 F1 资料。"
+      },
+      {
+        "path": "projects/green-unified-single/docs/index.html#sec-dual-tx-ledger",
+        "title": "双发资料入口",
+        "intro": "查看双发差异口径与参考工程入口。"
+      },
+      {
+        "path": "projects/green-unified-single/docs/index.html#sec-dual-rx-ledger",
+        "title": "双收资料入口",
+        "intro": "查看双收现有流程和状态入口。"
       }
     ],
-    "last_stage": "single-vbr-coeff-a3-outer-check",
+    "last_stage": "f4-f1-fb-keepoff-verify",
     "last_status": "pass",
-    "last_summary": "单发口径对齐完成：F4按外路VBR+系数收敛；回归F7/FB/A3/AC/A3/BA=6/6通过；A3外光路峰值中位值均>2100（存在偶发单点掉幅）",
-    "last_problem": "A3外光路存在偶发单点掉幅（建议按3次中位值判定并继续联调硬件链路）",
-    "last_updated": "2026-03-31 13:33:37",
-    "run_count": 27,
+    "last_summary": "2026-04-08 keepoff全链路核对：F4 work_apd=873；F1 5000mm verify pass(dist=4.999m, err=0.6mm)；FB00/FB01均LL且final_apd=873，dist=4999~5003。compare脚本的'口径漂移'为解析假阳性，原始日志显示F1 apd与FB apd一致",
+    "last_problem": "",
+    "last_updated": "2026-04-08 13:34:15",
+    "run_count": 33,
     "fail_count": 5,
     "open_problems": [
       {
@@ -48,9 +63,9 @@
   },
   {
     "id": "single-ref-project",
-    "name": "单发参考工程核对",
+    "name": "双发参考工程核对",
     "path": "E:\\相位\\program\\gd303_refactor 双发 - 副本 (5)\\gd303_refactor 双发 - 副本 (5)",
-    "intro": "历史参考工程，用于对照引脚、配置和行为口径。",
+    "intro": "历史双发参考工程，用于对照双发引脚、配置和行为口径。",
     "related_paths": [
       "E:\\相位\\program\\gd303_refactor 双发 - 副本 (5)\\gd303_refactor 双发 - 副本 (5)",
       "E:\\相位\\program\\green"
@@ -58,13 +73,13 @@
     "related_docs": [
       {
         "path": "projects/single-ref-project/docs/alignment-baseline.html",
-        "title": "统一平台对齐台账",
-        "intro": "记录该参考工程与 unified 的对齐基线。"
+        "title": "双发参考对齐台账",
+        "intro": "记录该参考工程与 unified 的双发对齐基线。"
       },
       {
         "path": "projects/single-ref-project/docs/principle-diff.html",
         "title": "三原理差异速览",
-        "intro": "用于核对当前工程口径属于哪种原理语义。"
+        "intro": "用于核对当前工程处于双发口径时的原理语义。"
       }
     ],
     "last_stage": "alignment-baseline",
@@ -110,5 +125,711 @@
     "run_count": 3,
     "fail_count": 0,
     "open_problems": []
+  },
+  {
+    "id": "repo-maintenance",
+    "name": "仓库维护巡检",
+    "path": "E:\\phase1",
+    "intro": "每日 17:00 轮询维护集合仓库；周报在每周最后一个工作日生成，并跳过法定节假日。",
+    "related_paths": [
+      "E:\\phase1\\progress\\project-management",
+      "E:\\phase1\\archives\\project-archives",
+      "E:\\phase1\\html-debug(1)\\html-debug",
+      "E:\\phase1\\debug_toll\\sim_tool",
+      "E:\\phase1\\debug_toll\\serial_web_upper_desktop",
+      "E:\\phase1\\debug_toll\\phaseplatform",
+      "E:\\phase1\\debug_toll\\laser_factory_platform",
+      "E:\\phase1\\green_updater",
+      "E:\\phase1\\medical_review_platform",
+      "E:\\phase1\\debug_toll\\code-map-workbench",
+      "E:\\phase1\\debug_toll\\unified-tool",
+      "E:\\phase1\\program\\J2N4C-150L",
+      "E:\\phase1\\program\\bootloader\\bootloader",
+      "E:\\phase1\\program\\green-lcd-5key",
+      "E:\\phase1\\tmp\\skills-cloud"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/docs/overview.md",
+        "title": "自动巡检说明",
+        "intro": "查看每日 17:00 巡检、最后工作日周报与节假日跳过规则。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天 git fetch/status 巡检结果。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "给人工评审后的提交/推送建议清单。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "按仓库进入确认提交、先 pull 或继续开发流程。"
+      }
+    ],
+    "last_stage": "daily-repo-maintenance",
+    "last_status": "info",
+    "last_summary": "2026-04-29 巡检 15 仓：干净 8，需关注 7，fetch失败 0，待评审推送 6，先同步远端 1",
+    "last_problem": "project-management(dirty 210); laser_factory_platform(dirty 13); medical_review_platform(dirty 7); J2N4C-150L(dirty 41); bootloader(dirty 11); green-lcd-5key(dirty 2); skills(behind 30, dirty 8)",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 29,
+    "fail_count": 4,
+    "open_problems": [
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "project-management: dirty 210"
+      },
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "laser_factory_platform: dirty 13"
+      },
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "medical_review_platform: dirty 7"
+      },
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "J2N4C-150L: dirty 41"
+      },
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "bootloader: dirty 11"
+      },
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "green-lcd-5key: dirty 2"
+      },
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "skills: behind 30, dirty 8"
+      }
+    ],
+    "sync_recommendation": "review-repos",
+    "sync_recommendation_label": "查看待确认提交队列",
+    "sync_recommendation_reason": "今日待评审推送 6 仓，先同步远端 1 仓，无需推送 8 仓",
+    "scan_memory_note": "本次复用 15 仓上次结论，仅对状态变化仓库更新记忆。"
+  },
+  {
+    "id": "repo-project-management",
+    "name": "project-management",
+    "path": "E:\\phase1\\progress\\project-management",
+    "intro": "项目管理上位机与自动跟踪数据仓库。",
+    "related_paths": [
+      "E:\\phase1\\progress\\project-management"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "info",
+    "last_summary": "2026-04-29 project-management：分支 main，最近提交 bec80c48 Initialize project management workspace",
+    "last_problem": "dirty 210",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "project-management: dirty 210"
+      }
+    ],
+    "sync_recommendation": "review-commit-push",
+    "sync_recommendation_label": "评审后提交推送",
+    "sync_recommendation_reason": "本地改动 210 条",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 17:36:14 的结论：评审后提交推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-project-archives",
+    "name": "project-archives",
+    "path": "E:\\phase1\\archives\\project-archives",
+    "intro": "打包产物归档与恢复资料仓库。",
+    "related_paths": [
+      "E:\\phase1\\archives\\project-archives"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "pass",
+    "last_summary": "2026-04-29 project-archives：分支 master，最近提交 a842d25f Archive complete packaged runtimes for 2026-04",
+    "last_problem": "",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [],
+    "sync_recommendation": "no-action",
+    "sync_recommendation_label": "无需推送",
+    "sync_recommendation_reason": "当前本地与远端一致",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：无需推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-html-debug",
+    "name": "html-debug",
+    "path": "E:\\phase1\\html-debug(1)\\html-debug",
+    "intro": "HTML 调试页面与联调资料仓库。",
+    "related_paths": [
+      "E:\\phase1\\html-debug(1)\\html-debug"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "pass",
+    "last_summary": "2026-04-29 html-debug：分支 master，最近提交 d3a35732 Initial import: html-debug",
+    "last_problem": "",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [],
+    "sync_recommendation": "no-action",
+    "sync_recommendation_label": "无需推送",
+    "sync_recommendation_reason": "当前本地与远端一致",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：无需推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-sim_tool",
+    "name": "sim_tool",
+    "path": "E:\\phase1\\debug_toll\\sim_tool",
+    "intro": "仿真工具源码仓库。",
+    "related_paths": [
+      "E:\\phase1\\debug_toll\\sim_tool"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "pass",
+    "last_summary": "2026-04-29 sim_tool：分支 master，最近提交 44e95617 Initial import: sim_tool",
+    "last_problem": "",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [],
+    "sync_recommendation": "no-action",
+    "sync_recommendation_label": "无需推送",
+    "sync_recommendation_reason": "当前本地与远端一致",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：无需推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-serial_web_upper_desktop",
+    "name": "serial_web_upper_desktop",
+    "path": "E:\\phase1\\debug_toll\\serial_web_upper_desktop",
+    "intro": "串口 Web 上位机桌面版源码仓库。",
+    "related_paths": [
+      "E:\\phase1\\debug_toll\\serial_web_upper_desktop"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "pass",
+    "last_summary": "2026-04-29 serial_web_upper_desktop：分支 master，最近提交 ed864968 Initial import: serial_web_upper_desktop",
+    "last_problem": "",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [],
+    "sync_recommendation": "no-action",
+    "sync_recommendation_label": "无需推送",
+    "sync_recommendation_reason": "当前本地与远端一致",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：无需推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-phaseplatform",
+    "name": "phaseplatform",
+    "path": "E:\\phase1\\debug_toll\\phaseplatform",
+    "intro": "相位平台上位机源码仓库。",
+    "related_paths": [
+      "E:\\phase1\\debug_toll\\phaseplatform"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "pass",
+    "last_summary": "2026-04-29 phaseplatform：分支 master，最近提交 c476f17a Initial import: phaseplatform",
+    "last_problem": "",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [],
+    "sync_recommendation": "no-action",
+    "sync_recommendation_label": "无需推送",
+    "sync_recommendation_reason": "当前本地与远端一致",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：无需推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-laser_factory_platform",
+    "name": "laser_factory_platform",
+    "path": "E:\\phase1\\debug_toll\\laser_factory_platform",
+    "intro": "激光工厂平台源码仓库。",
+    "related_paths": [
+      "E:\\phase1\\debug_toll\\laser_factory_platform"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "info",
+    "last_summary": "2026-04-29 laser_factory_platform：分支 master，最近提交 6ca6edce Initial import: laser_factory_platform",
+    "last_problem": "dirty 13",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "laser_factory_platform: dirty 13"
+      }
+    ],
+    "sync_recommendation": "review-commit-push",
+    "sync_recommendation_label": "评审后提交推送",
+    "sync_recommendation_reason": "本地改动 13 条",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 17:36:14 的结论：评审后提交推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-green_updater",
+    "name": "green_updater",
+    "path": "E:\\phase1\\green_updater",
+    "intro": "绿色设备升级工具源码仓库。",
+    "related_paths": [
+      "E:\\phase1\\green_updater"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "pass",
+    "last_summary": "2026-04-29 green_updater：分支 master，最近提交 9e7fb092 Initial import",
+    "last_problem": "",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [],
+    "sync_recommendation": "no-action",
+    "sync_recommendation_label": "无需推送",
+    "sync_recommendation_reason": "当前本地与远端一致",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：无需推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-medical_review_platform",
+    "name": "medical_review_platform",
+    "path": "E:\\phase1\\medical_review_platform",
+    "intro": "医疗审核平台源码仓库。",
+    "related_paths": [
+      "E:\\phase1\\medical_review_platform"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "info",
+    "last_summary": "2026-04-29 medical_review_platform：分支 master，最近提交 8eaabcb6 Initial import",
+    "last_problem": "dirty 7",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "medical_review_platform: dirty 7"
+      }
+    ],
+    "sync_recommendation": "review-commit-push",
+    "sync_recommendation_label": "评审后提交推送",
+    "sync_recommendation_reason": "本地改动 7 条",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 17:36:14 的结论：评审后提交推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-code-map-workbench",
+    "name": "code-map-workbench",
+    "path": "E:\\phase1\\debug_toll\\code-map-workbench",
+    "intro": "代码地图工作台源码仓库。",
+    "related_paths": [
+      "E:\\phase1\\debug_toll\\code-map-workbench"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "pass",
+    "last_summary": "2026-04-29 code-map-workbench：分支 master，最近提交 5e561780 Initial import",
+    "last_problem": "",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [],
+    "sync_recommendation": "no-action",
+    "sync_recommendation_label": "无需推送",
+    "sync_recommendation_reason": "当前本地与远端一致",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：无需推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-unified-tool",
+    "name": "unified-tool",
+    "path": "E:\\phase1\\debug_toll\\unified-tool",
+    "intro": "综合工具集源码仓库。",
+    "related_paths": [
+      "E:\\phase1\\debug_toll\\unified-tool"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "pass",
+    "last_summary": "2026-04-29 unified-tool：分支 master，最近提交 7a12ed52 Initial import",
+    "last_problem": "",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [],
+    "sync_recommendation": "no-action",
+    "sync_recommendation_label": "无需推送",
+    "sync_recommendation_reason": "当前本地与远端一致",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：无需推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-j2n4c-150l",
+    "name": "J2N4C-150L",
+    "path": "E:\\phase1\\program\\J2N4C-150L",
+    "intro": "J2N4C-150L 固件源码仓库。",
+    "related_paths": [
+      "E:\\phase1\\program\\J2N4C-150L"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "info",
+    "last_summary": "2026-04-29 J2N4C-150L：分支 master，最近提交 7fb752d7 初次提交",
+    "last_problem": "dirty 41",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "J2N4C-150L: dirty 41"
+      }
+    ],
+    "sync_recommendation": "review-commit-push",
+    "sync_recommendation_label": "评审后提交推送",
+    "sync_recommendation_reason": "本地改动 41 条",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：评审后提交推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-bootloader",
+    "name": "bootloader",
+    "path": "E:\\phase1\\program\\bootloader\\bootloader",
+    "intro": "Bootloader 固件源码仓库。",
+    "related_paths": [
+      "E:\\phase1\\program\\bootloader\\bootloader"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "info",
+    "last_summary": "2026-04-29 bootloader：分支 master，最近提交 86ae6a2e 初次提交",
+    "last_problem": "dirty 11",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "bootloader: dirty 11"
+      }
+    ],
+    "sync_recommendation": "review-commit-push",
+    "sync_recommendation_label": "评审后提交推送",
+    "sync_recommendation_reason": "本地改动 11 条；样本里含疑似构建/产物文件",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：评审后提交推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-green-lcd-5key",
+    "name": "green-lcd-5key",
+    "path": "E:\\phase1\\program\\green-lcd-5key",
+    "intro": "green-lcd-5key 固件源码仓库。",
+    "related_paths": [
+      "E:\\phase1\\program\\green-lcd-5key"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "info",
+    "last_summary": "2026-04-29 green-lcd-5key：分支 master，最近提交 58f22762 Initial import",
+    "last_problem": "dirty 2",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "green-lcd-5key: dirty 2"
+      }
+    ],
+    "sync_recommendation": "review-commit-push",
+    "sync_recommendation_label": "评审后提交推送",
+    "sync_recommendation_reason": "本地改动 2 条",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 17:36:14 的结论：评审后提交推送",
+    "scan_memory_changed": false
+  },
+  {
+    "id": "repo-skills",
+    "name": "skills",
+    "path": "E:\\phase1\\tmp\\skills-cloud",
+    "intro": "Codex skills 维护仓库。",
+    "related_paths": [
+      "E:\\phase1\\tmp\\skills-cloud"
+    ],
+    "related_docs": [
+      {
+        "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
+        "title": "日报 2026-04-29",
+        "intro": "查看当天巡检快照与改动样本。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
+        "title": "同步建议 2026-04-29",
+        "intro": "查看该仓库今天是否建议提交/推送。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
+        "title": "待确认提交队列 2026-04-29",
+        "intro": "从统一队列进入该仓库的提交确认流程。"
+      }
+    ],
+    "last_stage": "repo-daily-scan",
+    "last_status": "info",
+    "last_summary": "2026-04-29 skills：分支 main，最近提交 3a4b348d chore: sync local codex skills",
+    "last_problem": "behind 30; dirty 8",
+    "last_updated": "2026-04-29 18:01:05",
+    "run_count": 12,
+    "fail_count": 2,
+    "open_problems": [
+      {
+        "timestamp": "2026-04-29 18:01:05",
+        "text": "skills: behind 30, dirty 8"
+      }
+    ],
+    "sync_recommendation": "pull-review-first",
+    "sync_recommendation_label": "先 pull 再评审",
+    "sync_recommendation_reason": "落后 30 提交，且本地还有改动/待推送内容",
+    "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：先 pull 再评审",
+    "scan_memory_changed": false
   }
 ]
