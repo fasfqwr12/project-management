@@ -16,6 +16,7 @@ body { margin: 0; font-family: "Segoe UI", "Microsoft YaHei", sans-serif; color:
 .sidebar p { margin: 8px 0 0 0; color: #bdd0ef; font-size: 12px; }
 .menu-item { margin-top: 10px; width: 100%; display: block; text-decoration: none; color: #eff4ff; background: #1a2d4f; border: 1px solid #27426f; border-radius: 8px; padding: 10px; }
 .menu-item:hover { border-color: #6b97de; }
+.menu-item.needs-push { border-color: #d6a21d; box-shadow: inset 0 0 0 1px rgba(214, 162, 29, 0.28); }
 .main { padding: 18px; }
 .head { display: flex; align-items: center; justify-content: space-between; }
 .head h2 { margin: 0; font-size: 24px; }
@@ -36,6 +37,8 @@ th { color: var(--sub); font-weight: 600; }
 .status-pass { color: var(--ok); font-weight: 700; }
 .status-fail { color: var(--fail); font-weight: 700; }
 .status-info { color: var(--sub); font-weight: 700; }
+.push-star { color: #d6a21d; font-weight: 700; margin-right: 6px; }
+.push-star-inline { display: inline-flex; align-items: center; gap: 6px; }
 @media (max-width: 900px) {
   .layout { grid-template-columns: 1fr; }
 }

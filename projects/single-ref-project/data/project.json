@@ -1,30 +1,35 @@
 {
   "id": "single-ref-project",
-  "name": "单发参考工程核对",
+  "name": "双发参考工程核对",
   "path": "E:\\相位\\program\\gd303_refactor 双发 - 副本 (5)\\gd303_refactor 双发 - 副本 (5)",
-  "intro": "历史参考工程，用于对照引脚、配置和行为口径。",
+  "intro": "历史双发参考工程，用于对照双发引脚、配置和行为口径。",
   "related_paths": [
     "E:\\相位\\program\\gd303_refactor 双发 - 副本 (5)\\gd303_refactor 双发 - 副本 (5)",
     "E:\\相位\\program\\green"
   ],
   "related_docs": [
     {
-      "path": "docs/alignment-baseline.html",
-      "title": "对齐基线说明",
-      "intro": "记录该参考工程作为统一平台对齐基线的理由和边界。"
+      "path": "projects/single-ref-project/docs/alignment-baseline.html",
+      "title": "双发参考对齐台账",
+      "intro": "记录该参考工程与 unified 的双发对齐基线。"
     },
     {
-      "path": "docs/principle-diff.html",
+      "path": "projects/single-ref-project/docs/principle-diff.html",
       "title": "三原理差异速览",
-      "intro": "用于核对当前工程归属原理和采样语义。"
-    },
-    {
-      "path": "docs/index.html",
-      "title": "项目资料导航",
-      "intro": "进入本项目资料目录，继续逐层跳转。"
+      "intro": "用于核对当前工程处于双发口径时的原理语义。"
     }
   ],
   "last_stage": "alignment-baseline",
   "last_status": "info",
-  "run_count": 8
+  "last_summary": "确认参考工程当前为双发口径，作为 unified 对齐参照基线",
+  "last_problem": "",
+  "last_updated": "2026-03-30 14:52:17",
+  "run_count": 8,
+  "fail_count": 1,
+  "open_problems": [
+    {
+      "timestamp": "2026-03-30 13:58:28",
+      "text": "command exit code: 2"
+    }
+  ]
 }

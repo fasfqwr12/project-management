@@ -8,37 +8,39 @@
   ],
   "related_docs": [
     {
-      "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
-      "title": "日报 2026-04-29",
+      "path": "projects/repo-maintenance/reports/daily/2026-04-30.md",
+      "title": "日报 2026-04-30",
       "intro": "查看当天巡检快照与改动样本。"
     },
     {
-      "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
-      "title": "同步建议 2026-04-29",
+      "path": "projects/repo-maintenance/reports/review/2026-04-30-sync-review.md",
+      "title": "同步建议 2026-04-30",
       "intro": "查看该仓库今天是否建议提交/推送。"
     },
     {
-      "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
-      "title": "待确认提交队列 2026-04-29",
+      "path": "projects/repo-maintenance/reports/ready/2026-04-30-push-queue.md",
+      "title": "待确认提交队列 2026-04-30",
       "intro": "从统一队列进入该仓库的提交确认流程。"
     }
   ],
   "last_stage": "repo-daily-scan",
   "last_status": "info",
-  "last_summary": "2026-04-29 laser_factory_platform：分支 master，最近提交 6ca6edce Initial import: laser_factory_platform",
-  "last_problem": "dirty 13",
-  "last_updated": "2026-04-29 18:01:05",
-  "run_count": 12,
+  "last_summary": "2026-04-30 laser_factory_platform：分支 master，最近提交 c1485c1d feat: add device trace workflow",
+  "last_problem": "ahead 1",
+  "last_updated": "2026-04-30 17:19:00",
+  "run_count": 17,
   "fail_count": 2,
   "open_problems": [
     {
-      "timestamp": "2026-04-29 18:01:05",
-      "text": "laser_factory_platform: dirty 13"
+      "timestamp": "2026-04-30 17:19:00",
+      "text": "laser_factory_platform: ahead 1"
     }
   ],
-  "sync_recommendation": "review-commit-push",
-  "sync_recommendation_label": "评审后提交推送",
-  "sync_recommendation_reason": "本地改动 13 条",
-  "scan_memory_note": "状态未变化，沿用 2026-04-29 17:36:14 的结论：评审后提交推送",
-  "scan_memory_changed": false
+  "sync_recommendation": "push-ready",
+  "sync_recommendation_label": "建议直接推送",
+  "sync_recommendation_reason": "本地领先远端 1 提交",
+  "scan_memory_note": "状态未变化，沿用 2026-04-29 18:34:46 的结论：建议直接推送",
+  "scan_memory_changed": false,
+  "last_change_summary": "待推送提交 `c1485c1d` 新增 `app/storage/trace_repo.py`，扩展 `app/services/workflow_service.py` / `app/api/routes.py` 的设备追溯接口，并在 `app/static/tab5.js`、`common.js`、`index.html`、`styles.css` 补了追溯页和自检推荐高亮，连带更新 `data/factory.db`。",
+  "change_purpose": "给工厂平台补设备追溯入口和自检定位能力。"
 }

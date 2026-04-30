@@ -24,6 +24,10 @@ function linkify(str) {
   return text.replace(pattern, (m) => `<code>${m}</code>`);
 }
 
+function needsPushStar(project) {
+  return project.sync_recommendation === "review-commit-push" || project.sync_recommendation === "push-ready";
+}
+
 function currentProjectIdFromPath() {
   const parts = location.pathname.replace(/\\/g, "/").split("/").filter(Boolean);
   const idx = parts.findIndex((p) => p === "projects");
@@ -55,10 +59,35 @@ async function renderProjectPage() {
 
   const projectRuns = (runs || []).filter((r) => r.project === project.id).slice(0, 200);
 
-  document.getElementById("title").textContent = project.name || project.id;
+  document.getElementById("title").innerHTML = needsPushStar(project)
+    ? `<span class="push-star-inline"><span class="push-star" title="建议评审后推送">★</span><span>${escapeHtml(project.name || project.id)}</span></span>`
+    : escapeHtml(project.name || project.id);
   document.getElementById("projectId").textContent = project.id;
   document.getElementById("projectPath").textContent = project.path || "-";
   document.getElementById("projectIntro").textContent = project.intro || "-";
+  let adviceBlock = document.getElementById("projectAdviceBlock");
+  if (!adviceBlock) {
+    adviceBlock = document.createElement("p");
+    adviceBlock.id = "projectAdviceBlock";
+    const introLine = document.getElementById("projectIntro").parentElement;
+    introLine.insertAdjacentElement("afterend", adviceBlock);
+  }
+  if (project.sync_recommendation_label) {
+    adviceBlock.innerHTML = `<strong>同步建议：</strong>${escapeHtml(project.sync_recommendation_label)}<br><small>${escapeHtml(project.sync_recommendation_reason || "")}</small>`;
+  } else {
+    adviceBlock.innerHTML = "<strong>同步建议：</strong>-";
+  }
+  let memoryBlock = document.getElementById("projectMemoryBlock");
+  if (!memoryBlock) {
+    memoryBlock = document.createElement("p");
+    memoryBlock.id = "projectMemoryBlock";
+    adviceBlock.insertAdjacentElement("afterend", memoryBlock);
+  }
+  if (project.scan_memory_note) {
+    memoryBlock.innerHTML = `<strong>巡检记忆：</strong><small>${escapeHtml(project.scan_memory_note)}</small>`;
+  } else {
+    memoryBlock.innerHTML = "<strong>巡检记忆：</strong><small>-</small>";
+  }
   document.getElementById("lastStage").textContent = project.last_stage || "-";
   const lastStatus = document.getElementById("lastStatus");
   lastStatus.textContent = project.last_status || "-";

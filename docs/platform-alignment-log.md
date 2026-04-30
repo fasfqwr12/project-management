@@ -77,6 +77,53 @@
 - 当前单发结论（当日）：
   - 已明确“F4 只负责工作点，F1 只负责相位校准，FB 只负责测距验证”的职责边界。
 
+## E6 自检协议对齐（2026-04-22）
+
+### 协议解析验证
+
+- F7 设备信息: 48B变长帧, LE序, ✅ 与固件 `cmd_system.c::cmd_device_info()` 完全对齐
+- E6 自检bitmap: 固定帧, BE序, ✅ 与固件 `cmd_debug_shared.c::cmd_selftest()` 完全对齐
+- EA 状态快照: 8B变长帧, ✅ 与固件 `cmd_debug_basic.c::cmd_status_snapshot()` 完全对齐
+- 实测 COM23 bitmap=0x00000300 → bit8 PLL通信 + bit9 PLL锁定
+
+### E6 PLL误报根因
+
+- 单发模式 `cmd_debug_start_session` 用 `INTERNAL_RAW` 跳过了 `pll_enable()`
+- 但 E6 仍无条件 `pll_read_status()` → 读到未配置的 Si5351 → 误报 PLL 错误
+- gd303双发版正确做法: `pll_request_on(0)` → 等50ms → 读状态 → `pll_release()`
+
+### E6 缺失检查项（对比 gd303双发版 diagnostic.c）
+
+| 检查项 | bit位 | gd303双发 | green-lcd | 改动方案 |
+|---|---|---|---|---|
+| MC3416 ID | bit4 | ✅ WHO_AM_I | ❌ 缺失 | `drv_mc3416_get_error()` |
+| PLL开启后检查 | bit8-10 | ✅ 先开再测再关 | ❌ 未开就测 | `pll_enable()+50ms+read+disable` |
+| PLL输出 | bit10 | ✅ 读reg3 | ❌ 缺失 | `si5351_readonebyte(0x03)` |
+| APD寻优 | bit13 | ✅ find_apd_vbr | ❌ 缺失 | `apd_manager_quick_check_and_set_apd()` |
+| 相位校准 | bit27 | ✅ ±360范围 | ❌ 缺失 | `g_cal_data.phase[m].valid` |
+| 系数 | bit29 | ✅ apdwork范围 | ❌ 缺失 | `g_cal_data.coeff.apdwork` |
+| 光速校准 | bit28 | ✅ num=2 | ❌ 缺失 | `g_cal_data.speed_cal.point_count` |
+| LD发射 | bit17 | ❌ | ❌ | 暂不加 |
+| 相位稳定性 | bit24 | ✅ shake>5 | ❌ | 不加(BA/AB独立命令) |
+
+### 开机耗时分析
+
+- 现有E6: ~75ms
+- 新增PLL开/测/关: ~60ms
+- 新增MC3416: ~1ms
+- 新增APD寻优(force_refind): ~500ms-2s (先全功能, 后续优化)
+- 新增校准3项: ~1ms
+- 合计: ~135ms(不含APD寻优) / ~1-2s(含APD寻优)
+- 开机2s限制: 无日志时够用, 后续可优化开机轻量版
+
+### 遗留问题
+
+- [ ] APD寻优开机耗时优化: 开机只查 bestapd 范围, 命令触发才做完整寻优
+- [ ] 上位机前端 E6 bitmap 显示需增加新 bit 项中文标签
+- [ ] 上位机扫描后自动连接(identified→auto activate)
+- [ ] 上位机操作结果回填设备卡片(F7→信息, E6→自检, EA→APD)
+- [ ] 上位机详情在日志区切换显示
+
 ## 运行偏差复盘（2026-03-31）
 
 - 现象：

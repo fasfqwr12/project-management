@@ -18,6 +18,20 @@ function statusClass(status) {
   return "status-info";
 }
 
+function escapeHtml(str) {
+  return String(str || "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;");
+}
+
+function needsPushStar(project) {
+  return project.sync_recommendation === "review-commit-push" || project.sync_recommendation === "push-ready";
+}
+
+function projectNameHtml(project) {
+  const name = escapeHtml(project.name || project.id || "-");
+  if (!needsPushStar(project)) return name;
+  return `<span class="push-star-inline"><span class="push-star" title="建议评审后推送">★</span><span>${name}</span></span>`;
+}
+
 function renderDocLi(doc) {
   if (typeof doc === "string") {
     return `<li><a href="./${doc}">${doc}</a></li>`;
@@ -41,9 +55,9 @@ async function render() {
   menu.innerHTML = "";
   projects.forEach((p, idx) => {
     const a = document.createElement("a");
-    a.className = "menu-item";
+    a.className = `menu-item${needsPushStar(p) ? " needs-push" : ""}`;
     a.href = `./projects/${encodeURIComponent(p.id)}/index.html`;
-    a.innerHTML = `<strong>${p.name || p.id}</strong><br><small>${p.path || "-"}</small>`;
+    a.innerHTML = `<strong>${projectNameHtml(p)}</strong><br><small>${escapeHtml(p.path || "-")}</small>`;
     menu.appendChild(a);
   });
 
@@ -53,6 +67,9 @@ async function render() {
     const tr = document.createElement("tr");
     const relatedPaths = (p.related_paths || []).map((x) => `<li>${x}</li>`).join("");
     const relatedDocs = (p.related_docs || []).map((x) => renderDocLi(x)).join("");
+    const recommendationHtml = p.sync_recommendation_label
+      ? `<strong>${escapeHtml(p.sync_recommendation_label)}</strong><br><small>${escapeHtml(p.sync_recommendation_reason || "")}</small>`
+      : "-";
     const hierarchyHtml = `
       <details>
         <summary>展开</summary>
@@ -65,13 +82,14 @@ async function render() {
       </details>
     `;
     tr.innerHTML = `
-      <td>${p.name || p.id}</td>
-      <td>${p.path || "-"}</td>
-      <td>${p.intro || "-"}</td>
+      <td>${projectNameHtml(p)}</td>
+      <td>${escapeHtml(p.path || "-")}</td>
+      <td>${escapeHtml(p.intro || "-")}</td>
       <td>${hierarchyHtml}</td>
-      <td>${p.last_stage || "-"}</td>
+      <td>${escapeHtml(p.last_stage || "-")}</td>
       <td class="${statusClass(p.last_status)}">${p.last_status || "-"}</td>
-      <td>${p.last_updated || "-"}</td>
+      <td>${recommendationHtml}</td>
+      <td>${escapeHtml(p.last_updated || "-")}</td>
       <td><a href="./projects/${encodeURIComponent(p.id)}/index.html">查看</a></td>
     `;
     rows.appendChild(tr);

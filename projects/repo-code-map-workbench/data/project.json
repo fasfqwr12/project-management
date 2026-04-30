@@ -8,32 +8,34 @@
   ],
   "related_docs": [
     {
-      "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
-      "title": "日报 2026-04-29",
+      "path": "projects/repo-maintenance/reports/daily/2026-04-30.md",
+      "title": "日报 2026-04-30",
       "intro": "查看当天巡检快照与改动样本。"
     },
     {
-      "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
-      "title": "同步建议 2026-04-29",
+      "path": "projects/repo-maintenance/reports/review/2026-04-30-sync-review.md",
+      "title": "同步建议 2026-04-30",
       "intro": "查看该仓库今天是否建议提交/推送。"
     },
     {
-      "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
-      "title": "待确认提交队列 2026-04-29",
+      "path": "projects/repo-maintenance/reports/ready/2026-04-30-push-queue.md",
+      "title": "待确认提交队列 2026-04-30",
       "intro": "从统一队列进入该仓库的提交确认流程。"
     }
   ],
   "last_stage": "repo-daily-scan",
   "last_status": "pass",
-  "last_summary": "2026-04-29 code-map-workbench：分支 master，最近提交 5e561780 Initial import",
+  "last_summary": "2026-04-30 code-map-workbench：分支 master，最近提交 5e561780 Initial import",
   "last_problem": "",
-  "last_updated": "2026-04-29 18:01:05",
-  "run_count": 12,
+  "last_updated": "2026-04-30 17:19:00",
+  "run_count": 17,
   "fail_count": 2,
   "open_problems": [],
   "sync_recommendation": "no-action",
   "sync_recommendation_label": "无需推送",
   "sync_recommendation_reason": "当前本地与远端一致",
-  "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：无需推送",
-  "scan_memory_changed": false
+  "scan_memory_note": "状态未变化，沿用 2026-04-29 18:34:46 的结论：无需推送",
+  "scan_memory_changed": false,
+  "last_change_summary": "本次主要改动样本：无。",
+  "change_purpose": "当前目的待人工确认。"
 }

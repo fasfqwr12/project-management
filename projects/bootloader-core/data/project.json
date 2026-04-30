@@ -9,22 +9,22 @@
   ],
   "related_docs": [
     {
-      "path": "docs/overview.html",
+      "path": "projects/bootloader-core/docs/overview.html",
       "title": "Bootloader 项目介绍",
-      "intro": "项目目标、范围、阶段和建议跟踪方式。"
+      "intro": "介绍 Bootloader 项目目标、范围和跟踪建议。"
     },
     {
-      "path": "docs/alignment-link.html",
-      "title": "与平台对齐关系",
-      "intro": "说明 Bootloader 与统一平台对齐的关联点。"
-    },
-    {
-      "path": "docs/index.html",
-      "title": "项目资料导航",
-      "intro": "进入本项目资料目录，继续逐层跳转。"
+      "path": "projects/bootloader-core/docs/alignment-link.html",
+      "title": "统一平台对齐台账",
+      "intro": "记录与主平台关联的对齐项。"
     }
   ],
   "last_stage": "docs-linked",
   "last_status": "info",
-  "run_count": 3
+  "last_summary": "bootloader 项目已挂接介绍文档与路径层级",
+  "last_problem": "",
+  "last_updated": "2026-03-30 15:03:50",
+  "run_count": 3,
+  "fail_count": 0,
+  "open_problems": []
 }

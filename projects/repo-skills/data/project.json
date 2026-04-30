@@ -8,37 +8,39 @@
   ],
   "related_docs": [
     {
-      "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
-      "title": "日报 2026-04-29",
+      "path": "projects/repo-maintenance/reports/daily/2026-04-30.md",
+      "title": "日报 2026-04-30",
       "intro": "查看当天巡检快照与改动样本。"
     },
     {
-      "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
-      "title": "同步建议 2026-04-29",
+      "path": "projects/repo-maintenance/reports/review/2026-04-30-sync-review.md",
+      "title": "同步建议 2026-04-30",
       "intro": "查看该仓库今天是否建议提交/推送。"
     },
     {
-      "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
-      "title": "待确认提交队列 2026-04-29",
+      "path": "projects/repo-maintenance/reports/ready/2026-04-30-push-queue.md",
+      "title": "待确认提交队列 2026-04-30",
       "intro": "从统一队列进入该仓库的提交确认流程。"
     }
   ],
   "last_stage": "repo-daily-scan",
   "last_status": "info",
-  "last_summary": "2026-04-29 skills：分支 main，最近提交 3a4b348d chore: sync local codex skills",
-  "last_problem": "behind 30; dirty 8",
-  "last_updated": "2026-04-29 18:01:05",
-  "run_count": 12,
+  "last_summary": "2026-04-30 skills：分支 main，最近提交 33904c3a feat: sync local codex skills",
+  "last_problem": "git-only 1; runtime-drift 24",
+  "last_updated": "2026-04-30 17:19:00",
+  "run_count": 17,
   "fail_count": 2,
   "open_problems": [
     {
-      "timestamp": "2026-04-29 18:01:05",
-      "text": "skills: behind 30, dirty 8"
+      "timestamp": "2026-04-30 17:19:00",
+      "text": "skills: git-only 1, runtime-drift 24"
     }
   ],
-  "sync_recommendation": "pull-review-first",
-  "sync_recommendation_label": "先 pull 再评审",
-  "sync_recommendation_reason": "落后 30 提交，且本地还有改动/待推送内容",
-  "scan_memory_note": "状态未变化，沿用 2026-04-29 14:32:12 的结论：先 pull 再评审",
-  "scan_memory_changed": false
+  "sync_recommendation": "sync-runtime-first",
+  "sync_recommendation_label": "先同步运行目录",
+  "sync_recommendation_reason": "git 仓缺少运行目录对应项 1 项；同名文件内容不一致 24 项；样本：green-c-code-guardrails/SKILL.md，greenlaser-debug-automation/SKILL.md，README.md",
+  "scan_memory_note": "状态未变化，沿用 2026-04-30 17:09:22 的结论：先同步运行目录",
+  "scan_memory_changed": false,
+  "last_change_summary": "运行目录 `C:\\Users\\Administrator\\.codex\\skills` 与 `skills-cloud` 存在未对齐项，且 git 仓仍有 `README.md` 和多个 skill 目录改动。",
+  "change_purpose": "确保每天先把实际在用的本地 skill 变更同步回 git 源仓，再决定是否提交。"
 }

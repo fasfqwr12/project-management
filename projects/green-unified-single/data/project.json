@@ -2,7 +2,7 @@
   "id": "green-unified-single",
   "name": "Unified 平台单发调试",
   "path": "E:\\相位\\program\\green",
-  "intro": "统一平台主工程，当前用于单发能力接入与兼容调试。",
+  "intro": "统一平台主工程，资料已按单发 / 双发 / 双收分组，当前用于单发能力接入与兼容调试。",
   "related_paths": [
     "E:\\相位\\program\\green",
     "E:\\相位\\program\\gd303_refactor 双发 - 副本 (5)\\gd303_refactor 双发 - 副本 (5)",
@@ -10,12 +10,53 @@
   ],
   "related_docs": [
     {
-      "path": "docs/index.html",
-      "title": "单页总台账（可搜索/分章节）",
-      "intro": "一个页面查看全部内容：任务总览、三原理差异、单发引脚状态、流程边界与执行清单。"
+      "path": "projects/green-unified-single/docs/index.html",
+      "title": "分原理资料台账（左菜单）",
+      "intro": "统一入口，按单发 / 双发 / 双收查看现有资料和台账。"
+    },
+    {
+      "path": "projects/green-unified-single/docs/index.html#sec-single-ledger",
+      "title": "单发资料入口",
+      "intro": "查看单发引脚状态、温补、S1 与 F1 资料。"
+    },
+    {
+      "path": "projects/green-unified-single/docs/index.html#sec-dual-tx-ledger",
+      "title": "双发资料入口",
+      "intro": "查看双发差异口径与参考工程入口。"
+    },
+    {
+      "path": "projects/green-unified-single/docs/index.html#sec-dual-rx-ledger",
+      "title": "双收资料入口",
+      "intro": "查看双收现有流程和状态入口。"
     }
   ],
-  "last_stage": "single-page-docs",
-  "last_status": "info",
-  "run_count": 10
+  "last_stage": "f4-f1-fb-keepoff-verify",
+  "last_status": "pass",
+  "last_summary": "2026-04-08 keepoff全链路核对：F4 work_apd=873；F1 5000mm verify pass(dist=4.999m, err=0.6mm)；FB00/FB01均LL且final_apd=873，dist=4999~5003。compare脚本的'口径漂移'为解析假阳性，原始日志显示F1 apd与FB apd一致",
+  "last_problem": "",
+  "last_updated": "2026-04-08 13:34:15",
+  "run_count": 33,
+  "fail_count": 5,
+  "open_problems": [
+    {
+      "timestamp": "2026-03-30 18:23:04",
+      "text": "ST-LINK仅识别到探针，未识别目标MCU（供电/接线/复位/SWD信号链需排查）"
+    },
+    {
+      "timestamp": "2026-03-30 18:20:53",
+      "text": "通信链路未建立。结合工程配置可确认APP走USART0(PA9/PA10,115200)，优先排查线序/地线/上电与是否进入APP。"
+    },
+    {
+      "timestamp": "2026-03-30 18:18:05",
+      "text": "工程当前为UART模式(MODE_WITH_BOOT=1, USART0 PA9/PA10)。需确认实际接线口、设备上电与是否进入APP态"
+    },
+    {
+      "timestamp": "2026-03-30 17:23:09",
+      "text": "COM3无响应：可能未烧录新固件/设备未在应用态/端口占用或端口不对"
+    },
+    {
+      "timestamp": "2026-03-30 17:21:25",
+      "text": "validate_stack/validate_cmd_router/validate_project_layout 均失败（路径漂移）"
+    }
+  ]
 }

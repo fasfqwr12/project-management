@@ -8,37 +8,39 @@
   ],
   "related_docs": [
     {
-      "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
-      "title": "日报 2026-04-29",
+      "path": "projects/repo-maintenance/reports/daily/2026-04-30.md",
+      "title": "日报 2026-04-30",
       "intro": "查看当天巡检快照与改动样本。"
     },
     {
-      "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
-      "title": "同步建议 2026-04-29",
+      "path": "projects/repo-maintenance/reports/review/2026-04-30-sync-review.md",
+      "title": "同步建议 2026-04-30",
       "intro": "查看该仓库今天是否建议提交/推送。"
     },
     {
-      "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
-      "title": "待确认提交队列 2026-04-29",
+      "path": "projects/repo-maintenance/reports/ready/2026-04-30-push-queue.md",
+      "title": "待确认提交队列 2026-04-30",
       "intro": "从统一队列进入该仓库的提交确认流程。"
     }
   ],
   "last_stage": "repo-daily-scan",
   "last_status": "info",
-  "last_summary": "2026-04-29 project-management：分支 main，最近提交 bec80c48 Initialize project management workspace",
-  "last_problem": "dirty 210",
-  "last_updated": "2026-04-29 18:01:05",
-  "run_count": 12,
+  "last_summary": "2026-04-30 project-management：分支 main，最近提交 33921e9f feat: add repo maintenance tracking projects",
+  "last_problem": "ahead 1; dirty 216",
+  "last_updated": "2026-04-30 17:19:00",
+  "run_count": 17,
   "fail_count": 2,
   "open_problems": [
     {
-      "timestamp": "2026-04-29 18:01:05",
-      "text": "project-management: dirty 210"
+      "timestamp": "2026-04-30 17:19:00",
+      "text": "project-management: ahead 1, dirty 216"
     }
   ],
   "sync_recommendation": "review-commit-push",
-  "sync_recommendation_label": "评审后提交推送",
-  "sync_recommendation_reason": "本地改动 210 条",
-  "scan_memory_note": "状态未变化，沿用 2026-04-29 17:36:14 的结论：评审后提交推送",
-  "scan_memory_changed": false
+  "sync_recommendation_label": "评审后补提交并推送",
+  "sync_recommendation_reason": "本地未提交 216 条，且已有 1 条待推送",
+  "scan_memory_note": "发现新变化：ahead 1；dirty 216；样本文件  M assets/index.js,  M assets/pm.css,  M assets/project-shell.js",
+  "scan_memory_changed": true,
+  "last_change_summary": "本次同时刷新 `projects/repo-maintenance/reports/*`、`data/projects.json`、`data/runs.json`、`summary.md`，并联动调整 `assets/index.js`、`assets/project-shell.js`、`assets/pm.css`、`docs/index.html` / `index.html` 的入口与展示逻辑。",
+  "change_purpose": "把正式维护仓的日巡检结果按仓库回写进项目跟踪，并把“日报 / 同步建议 / 待确认提交队列”变成前端可直达的固定入口。"
 }

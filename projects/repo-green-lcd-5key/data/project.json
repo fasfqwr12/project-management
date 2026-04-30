@@ -8,37 +8,39 @@
   ],
   "related_docs": [
     {
-      "path": "projects/repo-maintenance/reports/daily/2026-04-29.md",
-      "title": "日报 2026-04-29",
+      "path": "projects/repo-maintenance/reports/daily/2026-04-30.md",
+      "title": "日报 2026-04-30",
       "intro": "查看当天巡检快照与改动样本。"
     },
     {
-      "path": "projects/repo-maintenance/reports/review/2026-04-29-sync-review.md",
-      "title": "同步建议 2026-04-29",
+      "path": "projects/repo-maintenance/reports/review/2026-04-30-sync-review.md",
+      "title": "同步建议 2026-04-30",
       "intro": "查看该仓库今天是否建议提交/推送。"
     },
     {
-      "path": "projects/repo-maintenance/reports/ready/2026-04-29-push-queue.md",
-      "title": "待确认提交队列 2026-04-29",
+      "path": "projects/repo-maintenance/reports/ready/2026-04-30-push-queue.md",
+      "title": "待确认提交队列 2026-04-30",
       "intro": "从统一队列进入该仓库的提交确认流程。"
     }
   ],
   "last_stage": "repo-daily-scan",
   "last_status": "info",
-  "last_summary": "2026-04-29 green-lcd-5key：分支 master，最近提交 58f22762 Initial import",
-  "last_problem": "dirty 2",
-  "last_updated": "2026-04-29 18:01:05",
-  "run_count": 12,
+  "last_summary": "2026-04-30 green-lcd-5key：分支 master，最近提交 771814f1 feat: add DAC and calibration command routes",
+  "last_problem": "ahead 1; dirty 17",
+  "last_updated": "2026-04-30 17:19:00",
+  "run_count": 17,
   "fail_count": 2,
   "open_problems": [
     {
-      "timestamp": "2026-04-29 18:01:05",
-      "text": "green-lcd-5key: dirty 2"
+      "timestamp": "2026-04-30 17:19:00",
+      "text": "green-lcd-5key: ahead 1, dirty 17"
     }
   ],
   "sync_recommendation": "review-commit-push",
-  "sync_recommendation_label": "评审后提交推送",
-  "sync_recommendation_reason": "本地改动 2 条",
-  "scan_memory_note": "状态未变化，沿用 2026-04-29 17:36:14 的结论：评审后提交推送",
-  "scan_memory_changed": false
+  "sync_recommendation_label": "评审后补提交并推送",
+  "sync_recommendation_reason": "本地未提交 17 条，且已有 1 条待推送",
+  "scan_memory_note": "状态未变化，沿用 2026-04-30 17:09:22 的结论：评审后补提交并推送",
+  "scan_memory_changed": false,
+  "last_change_summary": "把 `board/board_gd303_lcd_single.h` 的按键口径切到 J2N4C 风格 6 键 (KEY1/3/4/5/7/9)，并同步改 `drivers/key/drv_key.c/.h`、`public/interrupt/gd32f30x_it.c` 的全 EXTI 中断映射；同时在 `cmd/cmd_debug_shared.c` 把 MC3416 改成严格 `WHO_AM_I` 校验，在 `drivers/lcd/control.c` / `drivers/lcd/lcd.c` / `app/app_init.c` 调整 LCD 刷新与测量显示链路，进度落到 `SENSOR_UI_ALIGNMENT_TRACKER_2026-04-30.md`。",
+  "change_purpose": "把 green-lcd-5key 的实物引脚、按键语义和传感器自检对齐到 `gd303_refactor` 单收板与 `J2N4C-150L` 的参考实现，降低按键/MC3416/LCD 联调时的口径偏差。"
 }
