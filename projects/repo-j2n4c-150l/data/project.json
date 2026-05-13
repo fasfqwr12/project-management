@@ -8,38 +8,38 @@
   ],
   "related_docs": [
     {
-      "path": "projects/repo-maintenance/reports/daily/2026-04-30.md",
-      "title": "日报 2026-04-30",
+      "path": "projects/repo-maintenance/reports/daily/2026-05-13.md",
+      "title": "日报 2026-05-13",
       "intro": "查看当天巡检快照与改动样本。"
     },
     {
-      "path": "projects/repo-maintenance/reports/review/2026-04-30-sync-review.md",
-      "title": "同步建议 2026-04-30",
+      "path": "projects/repo-maintenance/reports/review/2026-05-13-sync-review.md",
+      "title": "同步建议 2026-05-13",
       "intro": "查看该仓库今天是否建议提交/推送。"
     },
     {
-      "path": "projects/repo-maintenance/reports/ready/2026-04-30-push-queue.md",
-      "title": "待确认提交队列 2026-04-30",
+      "path": "projects/repo-maintenance/reports/ready/2026-05-13-push-queue.md",
+      "title": "待确认提交队列 2026-05-13",
       "intro": "从统一队列进入该仓库的提交确认流程。"
     }
   ],
   "last_stage": "repo-daily-scan",
   "last_status": "info",
-  "last_summary": "2026-04-30 J2N4C-150L：分支 master，最近提交 e411ffbf build: fix J2N4C-150L scatter file path",
-  "last_problem": "ahead 2; dirty 23",
-  "last_updated": "2026-04-30 17:19:00",
-  "run_count": 17,
+  "last_summary": "2026-05-13 J2N4C-150L：分支 master，最近提交 e411ffbf build: fix J2N4C-150L scatter file path",
+  "last_problem": "dirty 23",
+  "last_updated": "2026-05-13 20:17:12",
+  "run_count": 19,
   "fail_count": 2,
   "open_problems": [
     {
-      "timestamp": "2026-04-30 17:19:00",
-      "text": "J2N4C-150L: ahead 2, dirty 23"
+      "timestamp": "2026-05-13 20:17:12",
+      "text": "J2N4C-150L: dirty 23"
     }
   ],
   "sync_recommendation": "review-commit-push",
-  "sync_recommendation_label": "评审后补提交并推送",
-  "sync_recommendation_reason": "本地未提交 23 条，且已有 2 条待推送；样本里含疑似构建/产物文件",
-  "scan_memory_note": "状态未变化，沿用 2026-04-29 18:34:46 的结论：评审后补提交并推送",
+  "sync_recommendation_label": "评审后提交推送",
+  "sync_recommendation_reason": "本地改动 23 条；样本里含疑似构建/产物文件",
+  "scan_memory_note": "状态未变化，沿用 2026-05-13 20:02:17 的结论：评审后提交推送",
   "scan_memory_changed": false,
   "last_change_summary": "最近两条待推送源码变更以 `bdd0cbc feat: refactor optical path and lcd flow` 和 `e411ffb build: fix J2N4C-150L scatter file path` 为主，涉及 `driver/lcd/control.c`、`driver/lcd/lcd.c`、`driver/key/key.c`、`user/singal_process/singnal_process.c` 与 `project/gd103.uvprojx`；当前工作区另外混入 `project/output/*`、`project/JLinkLog.txt`、`.uvoptx` 和 workspace 文件。",
   "change_purpose": "把 150L 工程切到新的光路/显示/按键链路并修正 scatter 路径，保证后续编译、烧录和单双发测距联调能继续沿同一口径推进。"

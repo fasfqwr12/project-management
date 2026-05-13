@@ -8,38 +8,38 @@
   ],
   "related_docs": [
     {
-      "path": "projects/repo-maintenance/reports/daily/2026-04-30.md",
-      "title": "日报 2026-04-30",
+      "path": "projects/repo-maintenance/reports/daily/2026-05-13.md",
+      "title": "日报 2026-05-13",
       "intro": "查看当天巡检快照与改动样本。"
     },
     {
-      "path": "projects/repo-maintenance/reports/review/2026-04-30-sync-review.md",
-      "title": "同步建议 2026-04-30",
+      "path": "projects/repo-maintenance/reports/review/2026-05-13-sync-review.md",
+      "title": "同步建议 2026-05-13",
       "intro": "查看该仓库今天是否建议提交/推送。"
     },
     {
-      "path": "projects/repo-maintenance/reports/ready/2026-04-30-push-queue.md",
-      "title": "待确认提交队列 2026-04-30",
+      "path": "projects/repo-maintenance/reports/ready/2026-05-13-push-queue.md",
+      "title": "待确认提交队列 2026-05-13",
       "intro": "从统一队列进入该仓库的提交确认流程。"
     }
   ],
   "last_stage": "repo-daily-scan",
   "last_status": "info",
-  "last_summary": "2026-04-30 medical_review_platform：分支 master，最近提交 d779c2c7 feat: add AE/CM linkage check",
-  "last_problem": "ahead 2; dirty 15",
-  "last_updated": "2026-04-30 17:19:00",
-  "run_count": 17,
+  "last_summary": "2026-05-13 medical_review_platform：分支 master，最近提交 fa469bdc docs: add operator guide and harden startup scripts",
+  "last_problem": "ahead 1; dirty 1",
+  "last_updated": "2026-05-13 20:17:12",
+  "run_count": 19,
   "fail_count": 2,
   "open_problems": [
     {
-      "timestamp": "2026-04-30 17:19:00",
-      "text": "medical_review_platform: ahead 2, dirty 15"
+      "timestamp": "2026-05-13 20:17:12",
+      "text": "medical_review_platform: ahead 1, dirty 1"
     }
   ],
   "sync_recommendation": "review-commit-push",
   "sync_recommendation_label": "评审后补提交并推送",
-  "sync_recommendation_reason": "本地未提交 15 条，且已有 2 条待推送",
-  "scan_memory_note": "发现新变化：ahead 2；dirty 15；样本文件  M app.py,  M repository.py,  M scripts/refine_bat_rules_pass3.py",
+  "sync_recommendation_reason": "本地未提交 1 条，且已有 1 条待推送",
+  "scan_memory_note": "发现新变化：ahead 1；dirty 1；样本文件 ?? (3",
   "scan_memory_changed": true,
   "last_change_summary": "当前未提交改动集中在 `app.py`、`repository.py`、`static/app.js`、`static/index.html`、`static/style.css` 和 `scripts/refine_bat_rules_pass3.py`：后端新增报告模板绑定/报告运行记录/对齐记忆/EDC 提交接口，前端补了“报告”页和版本差异对照工作台，并继续推进 BAT 规则整理脚本。",
   "change_purpose": "把医学审核平台从“版本与规则查看”扩到“报告生成追踪 + EDC 自动提交流程”，支撑 BAT 项目后续监察产物输出和提交闭环。"

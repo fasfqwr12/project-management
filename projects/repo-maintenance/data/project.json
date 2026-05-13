@@ -27,62 +27,62 @@
       "intro": "查看每日 17:00 巡检、最后工作日周报与节假日跳过规则。"
     },
     {
-      "path": "projects/repo-maintenance/reports/daily/2026-04-30.md",
-      "title": "日报 2026-04-30",
+      "path": "projects/repo-maintenance/reports/daily/2026-05-13.md",
+      "title": "日报 2026-05-13",
       "intro": "查看当天 git fetch/status 巡检结果。"
     },
     {
-      "path": "projects/repo-maintenance/reports/review/2026-04-30-sync-review.md",
-      "title": "同步建议 2026-04-30",
+      "path": "projects/repo-maintenance/reports/review/2026-05-13-sync-review.md",
+      "title": "同步建议 2026-05-13",
       "intro": "给人工评审后的提交/推送建议清单。"
     },
     {
-      "path": "projects/repo-maintenance/reports/ready/2026-04-30-push-queue.md",
-      "title": "待确认提交队列 2026-04-30",
+      "path": "projects/repo-maintenance/reports/ready/2026-05-13-push-queue.md",
+      "title": "待确认提交队列 2026-05-13",
       "intro": "按仓库进入确认提交、先 pull 或继续开发流程。"
     }
   ],
   "last_stage": "daily-repo-maintenance",
   "last_status": "info",
-  "last_summary": "2026-04-30 巡检 15 仓：干净 8，需关注 7，fetch失败 0，待评审推送 6，先同步远端 0",
-  "last_problem": "project-management(ahead 1, dirty 216); laser_factory_platform(ahead 1); medical_review_platform(ahead 2, dirty 15); J2N4C-150L(ahead 2, dirty 23); bootloader(ahead 1, dirty 6); green-lcd-5key(ahead 1, dirty 17); skills(git-only 1, runtime-drift 24)",
-  "last_updated": "2026-04-30 17:19:00",
-  "run_count": 34,
+  "last_summary": "2026-05-13 巡检 15 仓：干净 8，需关注 7，fetch失败 0，待评审推送 6，先同步远端 0",
+  "last_problem": "project-management(dirty 201); medical_review_platform(ahead 1, dirty 1); unified-tool(ahead 1); J2N4C-150L(dirty 23); bootloader(dirty 6); green-lcd-5key(ahead 1, dirty 3); skills(runtime-only 1, git-only 1, runtime-drift 24)",
+  "last_updated": "2026-05-13 20:17:12",
+  "run_count": 43,
   "fail_count": 4,
   "open_problems": [
     {
-      "timestamp": "2026-04-30 17:19:00",
-      "text": "project-management: ahead 1, dirty 216"
+      "timestamp": "2026-05-13 20:17:12",
+      "text": "project-management: dirty 201"
     },
     {
-      "timestamp": "2026-04-30 17:19:00",
-      "text": "laser_factory_platform: ahead 1"
+      "timestamp": "2026-05-13 20:17:12",
+      "text": "medical_review_platform: ahead 1, dirty 1"
     },
     {
-      "timestamp": "2026-04-30 17:19:00",
-      "text": "medical_review_platform: ahead 2, dirty 15"
+      "timestamp": "2026-05-13 20:17:12",
+      "text": "unified-tool: ahead 1"
     },
     {
-      "timestamp": "2026-04-30 17:19:00",
-      "text": "J2N4C-150L: ahead 2, dirty 23"
+      "timestamp": "2026-05-13 20:17:12",
+      "text": "J2N4C-150L: dirty 23"
     },
     {
-      "timestamp": "2026-04-30 17:19:00",
-      "text": "bootloader: ahead 1, dirty 6"
+      "timestamp": "2026-05-13 20:17:12",
+      "text": "bootloader: dirty 6"
     },
     {
-      "timestamp": "2026-04-30 17:19:00",
-      "text": "green-lcd-5key: ahead 1, dirty 17"
+      "timestamp": "2026-05-13 20:17:12",
+      "text": "green-lcd-5key: ahead 1, dirty 3"
     },
     {
-      "timestamp": "2026-04-30 17:19:00",
-      "text": "skills: git-only 1, runtime-drift 24"
+      "timestamp": "2026-05-13 20:17:12",
+      "text": "skills: runtime-only 1, git-only 1, runtime-drift 24"
     }
   ],
   "sync_recommendation": "review-repos",
   "sync_recommendation_label": "查看待确认提交队列",
   "sync_recommendation_reason": "今日待评审推送 6 仓，先同步远端 0 仓，无需推送 9 仓",
-  "scan_memory_note": "本次复用 13 仓上次结论，仅对状态变化仓库更新记忆。",
+  "scan_memory_note": "本次复用 11 仓上次结论，仅对状态变化仓库更新记忆。",
   "last_change_summary": "已刷新日报、同步建议和待确认提交队列三份正式入口。",
   "change_purpose": "把正式维护仓巡检结果回写到仓库级项目跟踪，作为后续评审和推送依据。"
 }

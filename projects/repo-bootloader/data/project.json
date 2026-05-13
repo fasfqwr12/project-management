@@ -8,38 +8,38 @@
   ],
   "related_docs": [
     {
-      "path": "projects/repo-maintenance/reports/daily/2026-04-30.md",
-      "title": "日报 2026-04-30",
+      "path": "projects/repo-maintenance/reports/daily/2026-05-13.md",
+      "title": "日报 2026-05-13",
       "intro": "查看当天巡检快照与改动样本。"
     },
     {
-      "path": "projects/repo-maintenance/reports/review/2026-04-30-sync-review.md",
-      "title": "同步建议 2026-04-30",
+      "path": "projects/repo-maintenance/reports/review/2026-05-13-sync-review.md",
+      "title": "同步建议 2026-05-13",
       "intro": "查看该仓库今天是否建议提交/推送。"
     },
     {
-      "path": "projects/repo-maintenance/reports/ready/2026-04-30-push-queue.md",
-      "title": "待确认提交队列 2026-04-30",
+      "path": "projects/repo-maintenance/reports/ready/2026-05-13-push-queue.md",
+      "title": "待确认提交队列 2026-05-13",
       "intro": "从统一队列进入该仓库的提交确认流程。"
     }
   ],
   "last_stage": "repo-daily-scan",
   "last_status": "info",
-  "last_summary": "2026-04-30 bootloader：分支 master，最近提交 afc3a923 feat: update UART boot validation flow",
-  "last_problem": "ahead 1; dirty 6",
-  "last_updated": "2026-04-30 17:19:00",
-  "run_count": 17,
+  "last_summary": "2026-05-13 bootloader：分支 master，最近提交 afc3a923 feat: update UART boot validation flow",
+  "last_problem": "dirty 6",
+  "last_updated": "2026-05-13 20:17:12",
+  "run_count": 19,
   "fail_count": 2,
   "open_problems": [
     {
-      "timestamp": "2026-04-30 17:19:00",
-      "text": "bootloader: ahead 1, dirty 6"
+      "timestamp": "2026-05-13 20:17:12",
+      "text": "bootloader: dirty 6"
     }
   ],
   "sync_recommendation": "review-commit-push",
-  "sync_recommendation_label": "评审后补提交并推送",
-  "sync_recommendation_reason": "本地未提交 6 条，且已有 1 条待推送；样本里含疑似构建/产物文件",
-  "scan_memory_note": "状态未变化，沿用 2026-04-29 18:34:46 的结论：评审后补提交并推送",
+  "sync_recommendation_label": "评审后提交推送",
+  "sync_recommendation_reason": "本地改动 6 条；样本里含疑似构建/产物文件",
+  "scan_memory_note": "状态未变化，沿用 2026-05-13 20:02:17 的结论：评审后提交推送",
   "scan_memory_changed": false,
   "last_change_summary": "最近待推送提交 `afc3a923 feat: update UART boot validation flow` 主要改了 `Core/Src/bootloader.c`、`Core/Inc/config.h`、`Core/Inc/bootloader.h` 和 `.gitignore`，把启动校验切到 UART 元数据链路；当前工作区另混入 `Objects/*.axf`、`Objects/*.hex`、`JLinkLog.txt` 和 `.uvoptx`。",
   "change_purpose": "让 bootloader 在跳转 APP 前按 `firmware_meta_t` 做 size/CRC 校验，并把构建产物默认排除在正式提交边界外。"

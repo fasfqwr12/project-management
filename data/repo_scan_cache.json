@@ -1,16 +1,16 @@
 {
   "repos": {
     "project-management": {
-      "signature": "{\"ahead\": 1, \"behind\": 0, \"branch\": \"main\", \"dirty_count\": 216, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"33921e9f\", \"sample_changes\": [\" M assets/index.js\", \" M assets/pm.css\", \" M assets/project-shell.js\", \" M data/data.js\", \" M data/projects.json\", \" M data/runs.json\", \" M docs/index.html\", \" M docs/platform-alignment-log.md\", \" M index.html\", \" M projects/bootloader-core/data/project.json\"], \"sync_note\": \"\", \"upstream\": \"origin/main\"}",
-      "last_seen": "2026-04-30 17:19:00",
-      "last_meaningful_change": "2026-04-30 17:19:00",
+      "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"main\", \"dirty_count\": 201, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"8e49006d\", \"sample_changes\": [\" M data/data.js\", \" M data/projects.json\", \" M data/repo_scan_cache.json\", \" M data/runs.json\", \" M projects/repo-bootloader/data/project.json\", \" M projects/repo-code-map-workbench/data/project.json\", \" M projects/repo-green-lcd-5key/data/project.json\", \" M projects/repo-green_updater/data/project.json\", \" M projects/repo-html-debug/data/project.json\", \" M projects/repo-j2n4c-150l/data/project.json\"], \"sync_note\": \"\", \"upstream\": \"origin/main\"}",
+      "last_seen": "2026-05-13 20:17:12",
+      "last_meaningful_change": "2026-05-13 20:17:11",
       "last_advice_code": "review-commit-push",
-      "last_advice_label": "评审后补提交并推送",
-      "last_memory_note": "发现新变化：ahead 1；dirty 216；样本文件  M assets/index.js,  M assets/pm.css,  M assets/project-shell.js"
+      "last_advice_label": "评审后提交推送",
+      "last_memory_note": "发现新变化：dirty 201；样本文件  M data/data.js,  M data/projects.json,  M data/repo_scan_cache.json"
     },
     "project-archives": {
       "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 0, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"a842d25f\", \"sample_changes\": [], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
-      "last_seen": "2026-04-30 17:19:00",
+      "last_seen": "2026-05-13 20:17:12",
       "last_meaningful_change": "2026-04-29 18:34:46",
       "last_advice_code": "no-action",
       "last_advice_label": "无需推送",
@@ -18,7 +18,7 @@
     },
     "html-debug": {
       "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 0, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"d3a35732\", \"sample_changes\": [], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
-      "last_seen": "2026-04-30 17:19:00",
+      "last_seen": "2026-05-13 20:17:12",
       "last_meaningful_change": "2026-04-29 18:34:46",
       "last_advice_code": "no-action",
       "last_advice_label": "无需推送",
@@ -26,7 +26,7 @@
     },
     "sim_tool": {
       "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 0, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"44e95617\", \"sample_changes\": [], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
-      "last_seen": "2026-04-30 17:19:00",
+      "last_seen": "2026-05-13 20:17:12",
       "last_meaningful_change": "2026-04-29 18:34:46",
       "last_advice_code": "no-action",
       "last_advice_label": "无需推送",
@@ -34,7 +34,7 @@
     },
     "serial_web_upper_desktop": {
       "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 0, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"ed864968\", \"sample_changes\": [], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
-      "last_seen": "2026-04-30 17:19:00",
+      "last_seen": "2026-05-13 20:17:12",
       "last_meaningful_change": "2026-04-29 18:34:46",
       "last_advice_code": "no-action",
       "last_advice_label": "无需推送",
@@ -42,83 +42,83 @@
     },
     "phaseplatform": {
       "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 0, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"c476f17a\", \"sample_changes\": [], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
-      "last_seen": "2026-04-30 17:19:00",
+      "last_seen": "2026-05-13 20:17:12",
       "last_meaningful_change": "2026-04-29 18:34:46",
       "last_advice_code": "no-action",
       "last_advice_label": "无需推送",
       "last_memory_note": "状态未变化，沿用 2026-04-29 18:34:46 的结论：无需推送"
     },
     "laser_factory_platform": {
-      "signature": "{\"ahead\": 1, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 0, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"c1485c1d\", \"sample_changes\": [], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
-      "last_seen": "2026-04-30 17:19:00",
-      "last_meaningful_change": "2026-04-29 18:34:46",
-      "last_advice_code": "push-ready",
-      "last_advice_label": "建议直接推送",
-      "last_memory_note": "状态未变化，沿用 2026-04-29 18:34:46 的结论：建议直接推送"
+      "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 0, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"c1485c1d\", \"sample_changes\": [], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
+      "last_seen": "2026-05-13 20:17:12",
+      "last_meaningful_change": "2026-05-13 20:02:17",
+      "last_advice_code": "no-action",
+      "last_advice_label": "无需推送",
+      "last_memory_note": "状态未变化，沿用 2026-05-13 20:02:17 的结论：无需推送"
     },
     "green_updater": {
       "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 0, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"9e7fb092\", \"sample_changes\": [], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
-      "last_seen": "2026-04-30 17:19:00",
+      "last_seen": "2026-05-13 20:17:12",
       "last_meaningful_change": "2026-04-29 18:34:46",
       "last_advice_code": "no-action",
       "last_advice_label": "无需推送",
       "last_memory_note": "状态未变化，沿用 2026-04-29 18:34:46 的结论：无需推送"
     },
     "medical_review_platform": {
-      "signature": "{\"ahead\": 2, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 15, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"d779c2c7\", \"sample_changes\": [\" M app.py\", \" M repository.py\", \" M scripts/refine_bat_rules_pass3.py\", \" M static/app.js\", \" M static/index.html\", \" M static/style.css\", \"?? bat_refined_pass3_output.json\", \"?? docs/\", \"?? extension/\", \"?? reports/\"], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
-      "last_seen": "2026-04-30 17:19:00",
-      "last_meaningful_change": "2026-04-30 17:19:00",
+      "signature": "{\"ahead\": 1, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 1, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"fa469bdc\", \"sample_changes\": [\"?? (3\"], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
+      "last_seen": "2026-05-13 20:17:12",
+      "last_meaningful_change": "2026-05-13 20:17:11",
       "last_advice_code": "review-commit-push",
       "last_advice_label": "评审后补提交并推送",
-      "last_memory_note": "发现新变化：ahead 2；dirty 15；样本文件  M app.py,  M repository.py,  M scripts/refine_bat_rules_pass3.py"
+      "last_memory_note": "发现新变化：ahead 1；dirty 1；样本文件 ?? (3"
     },
     "code-map-workbench": {
       "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 0, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"5e561780\", \"sample_changes\": [], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
-      "last_seen": "2026-04-30 17:19:00",
+      "last_seen": "2026-05-13 20:17:12",
       "last_meaningful_change": "2026-04-29 18:34:46",
       "last_advice_code": "no-action",
       "last_advice_label": "无需推送",
       "last_memory_note": "状态未变化，沿用 2026-04-29 18:34:46 的结论：无需推送"
     },
     "unified-tool": {
-      "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 0, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"7a12ed52\", \"sample_changes\": [], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
-      "last_seen": "2026-04-30 17:19:00",
-      "last_meaningful_change": "2026-04-29 18:34:46",
-      "last_advice_code": "no-action",
-      "last_advice_label": "无需推送",
-      "last_memory_note": "状态未变化，沿用 2026-04-29 18:34:46 的结论：无需推送"
+      "signature": "{\"ahead\": 1, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 0, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"8caa1f8c\", \"sample_changes\": [], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
+      "last_seen": "2026-05-13 20:17:12",
+      "last_meaningful_change": "2026-05-13 20:17:11",
+      "last_advice_code": "push-ready",
+      "last_advice_label": "建议直接推送",
+      "last_memory_note": "发现新变化：ahead 1"
     },
     "J2N4C-150L": {
-      "signature": "{\"ahead\": 2, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 23, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"e411ffbf\", \"sample_changes\": [\" M project/JLinkLog.txt\", \" M project/gd103.uvguix.Administrator\", \" M project/gd103.uvoptx\", \" M project/output/app_upgrade.crf\", \" M project/output/gd32f30x_adc.crf\", \" M project/output/gd32f30x_dma.crf\", \" M project/output/gd32f30x_exti.crf\", \" M project/output/gd32f30x_fmc.crf\", \" M project/output/gd32f30x_fwdgt.crf\", \" M project/output/gd32f30x_gpio.crf\"], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
-      "last_seen": "2026-04-30 17:19:00",
-      "last_meaningful_change": "2026-04-29 18:34:46",
+      "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 23, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"e411ffbf\", \"sample_changes\": [\" M project/JLinkLog.txt\", \" M project/gd103.uvguix.Administrator\", \" M project/gd103.uvoptx\", \" M project/output/app_upgrade.crf\", \" M project/output/gd32f30x_adc.crf\", \" M project/output/gd32f30x_dma.crf\", \" M project/output/gd32f30x_exti.crf\", \" M project/output/gd32f30x_fmc.crf\", \" M project/output/gd32f30x_fwdgt.crf\", \" M project/output/gd32f30x_gpio.crf\"], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
+      "last_seen": "2026-05-13 20:17:12",
+      "last_meaningful_change": "2026-05-13 20:02:17",
       "last_advice_code": "review-commit-push",
-      "last_advice_label": "评审后补提交并推送",
-      "last_memory_note": "状态未变化，沿用 2026-04-29 18:34:46 的结论：评审后补提交并推送"
+      "last_advice_label": "评审后提交推送",
+      "last_memory_note": "状态未变化，沿用 2026-05-13 20:02:17 的结论：评审后提交推送"
     },
     "bootloader": {
-      "signature": "{\"ahead\": 1, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 6, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"afc3a923\", \"sample_changes\": [\" M GD32_Bootloader.uvguix.Administrator\", \" M GD32_Bootloader.uvoptx\", \" M JLinkLog.txt\", \" M Objects/GD32_Bootloader.axf\", \" M Objects/GD32_Bootloader.hex\", \" M build_log.txt\"], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
-      "last_seen": "2026-04-30 17:19:00",
-      "last_meaningful_change": "2026-04-29 18:34:46",
+      "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 6, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"afc3a923\", \"sample_changes\": [\" M GD32_Bootloader.uvguix.Administrator\", \" M GD32_Bootloader.uvoptx\", \" M JLinkLog.txt\", \" M Objects/GD32_Bootloader.axf\", \" M Objects/GD32_Bootloader.hex\", \" M build_log.txt\"], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
+      "last_seen": "2026-05-13 20:17:12",
+      "last_meaningful_change": "2026-05-13 20:02:17",
       "last_advice_code": "review-commit-push",
-      "last_advice_label": "评审后补提交并推送",
-      "last_memory_note": "状态未变化，沿用 2026-04-29 18:34:46 的结论：评审后补提交并推送"
+      "last_advice_label": "评审后提交推送",
+      "last_memory_note": "状态未变化，沿用 2026-05-13 20:02:17 的结论：评审后提交推送"
     },
     "green-lcd-5key": {
-      "signature": "{\"ahead\": 1, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 17, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"771814f1\", \"sample_changes\": [\" M PROJECT_TRACKER.md\", \" M app/app_init.c\", \" M board/board_gd303_lcd_single.h\", \" M build_log.txt\", \" M cmd/cmd_debug_shared.c\", \" M drivers/key/drv_key.c\", \" M drivers/key/drv_key.h\", \" M drivers/lcd/algorithm.h\", \" M drivers/lcd/control.c\", \" M drivers/lcd/lcd.c\"], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
-      "last_seen": "2026-04-30 17:19:00",
-      "last_meaningful_change": "2026-04-30 17:09:22",
+      "signature": "{\"ahead\": 1, \"behind\": 0, \"branch\": \"master\", \"dirty_count\": 3, \"extra_reasons\": [], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"4b9314bd\", \"sample_changes\": [\" M build_log.txt\", \"?? build_log.htm\", \"?? build_log_text.txt\"], \"sync_note\": \"\", \"upstream\": \"origin/master\"}",
+      "last_seen": "2026-05-13 20:17:12",
+      "last_meaningful_change": "2026-05-13 20:17:11",
       "last_advice_code": "review-commit-push",
       "last_advice_label": "评审后补提交并推送",
-      "last_memory_note": "状态未变化，沿用 2026-04-30 17:09:22 的结论：评审后补提交并推送"
+      "last_memory_note": "发现新变化：ahead 1；dirty 3；样本文件  M build_log.txt, ?? build_log.htm, ?? build_log_text.txt"
     },
     "skills": {
-      "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"main\", \"dirty_count\": 0, \"extra_reasons\": [\"git-only 1\", \"runtime-drift 24\"], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"33904c3a\", \"sample_changes\": [], \"sync_note\": \"git 仓缺少运行目录对应项 1 项；同名文件内容不一致 24 项；样本：green-c-code-guardrails/SKILL.md，greenlaser-debug-automation/SKILL.md，README.md\", \"upstream\": \"origin/main\"}",
-      "last_seen": "2026-04-30 17:19:00",
-      "last_meaningful_change": "2026-04-30 17:09:22",
+      "signature": "{\"ahead\": 0, \"behind\": 0, \"branch\": \"main\", \"dirty_count\": 0, \"extra_reasons\": [\"runtime-only 1\", \"git-only 1\", \"runtime-drift 24\"], \"fetch_note\": \"\", \"fetch_ok\": true, \"last_commit_sha\": \"33904c3a\", \"sample_changes\": [], \"sync_note\": \"运行目录新增未回仓 1 项；git 仓缺少运行目录对应项 1 项；同名文件内容不一致 24 项；样本：keil-uvprojx-plaintext-edit/SKILL.md，green-c-code-guardrails/SKILL.md，greenlaser-debug-automation/SKILL.md，README.md\", \"upstream\": \"origin/main\"}",
+      "last_seen": "2026-05-13 20:17:12",
+      "last_meaningful_change": "2026-05-13 20:02:17",
       "last_advice_code": "sync-runtime-first",
       "last_advice_label": "先同步运行目录",
-      "last_memory_note": "状态未变化，沿用 2026-04-30 17:09:22 的结论：先同步运行目录"
+      "last_memory_note": "状态未变化，沿用 2026-05-13 20:02:17 的结论：先同步运行目录"
     }
   }
 }
