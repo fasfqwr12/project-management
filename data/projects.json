@@ -168,51 +168,47 @@
         "path": "projects/repo-maintenance/reports/ready/2026-05-13-push-queue.md",
         "title": "待确认提交队列 2026-05-13",
         "intro": "按仓库进入确认提交、先 pull 或继续开发流程。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/weekly/2026/2026-W18-pm-summary.md",
+        "title": "项目跟踪周报 2026-W18",
+        "intro": "基于 project-management 本周累计记录生成。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/wecom/2026-W18.md",
+        "title": "企业微信周报 2026-W18",
+        "intro": "可直接复制到企业微信周报。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/weekly/2026/2026-W20-pm-summary.md",
+        "title": "项目跟踪周报 2026-W20",
+        "intro": "基于 project-management 本周累计记录生成。"
+      },
+      {
+        "path": "projects/repo-maintenance/reports/wecom/2026-W20.md",
+        "title": "企业微信周报 2026-W20",
+        "intro": "可直接复制到企业微信周报。"
       }
     ],
-    "last_stage": "daily-repo-maintenance",
+    "last_stage": "pm-weekly-summary",
     "last_status": "info",
-    "last_summary": "2026-05-13 巡检 15 仓：干净 8，需关注 7，fetch失败 0，待评审推送 6，先同步远端 0",
-    "last_problem": "project-management(dirty 201); medical_review_platform(ahead 1, dirty 1); unified-tool(ahead 1); J2N4C-150L(dirty 23); bootloader(dirty 6); green-lcd-5key(ahead 1, dirty 3); skills(runtime-only 1, git-only 1, runtime-drift 24)",
-    "last_updated": "2026-05-13 20:17:12",
-    "run_count": 43,
+    "last_summary": "2026-W20 项目跟踪周报已生成：重点推进 6 项，待确认提交 6 仓",
+    "last_problem": "待确认提交 6 仓；构建产物待筛：bootloader、J2N4C-150L；skills 需先同步运行目录",
+    "last_updated": "2026-05-17 17:10:38",
+    "run_count": 45,
     "fail_count": 4,
     "open_problems": [
       {
-        "timestamp": "2026-05-13 20:17:12",
-        "text": "project-management: dirty 201"
-      },
-      {
-        "timestamp": "2026-05-13 20:17:12",
-        "text": "medical_review_platform: ahead 1, dirty 1"
-      },
-      {
-        "timestamp": "2026-05-13 20:17:12",
-        "text": "unified-tool: ahead 1"
-      },
-      {
-        "timestamp": "2026-05-13 20:17:12",
-        "text": "J2N4C-150L: dirty 23"
-      },
-      {
-        "timestamp": "2026-05-13 20:17:12",
-        "text": "bootloader: dirty 6"
-      },
-      {
-        "timestamp": "2026-05-13 20:17:12",
-        "text": "green-lcd-5key: ahead 1, dirty 3"
-      },
-      {
-        "timestamp": "2026-05-13 20:17:12",
-        "text": "skills: runtime-only 1, git-only 1, runtime-drift 24"
+        "timestamp": "2026-05-17 17:10:38",
+        "text": "待确认提交 6 仓；构建产物待筛：bootloader、J2N4C-150L；skills 需先同步运行目录"
       }
     ],
     "sync_recommendation": "review-repos",
     "sync_recommendation_label": "查看待确认提交队列",
     "sync_recommendation_reason": "今日待评审推送 6 仓，先同步远端 0 仓，无需推送 9 仓",
     "scan_memory_note": "本次复用 11 仓上次结论，仅对状态变化仓库更新记忆。",
-    "last_change_summary": "已刷新日报、同步建议和待确认提交队列三份正式入口。",
-    "change_purpose": "把正式维护仓巡检结果回写到仓库级项目跟踪，作为后续评审和推送依据。"
+    "last_change_summary": "已按本周累计项目跟踪记录生成周报，并补齐企业微信周报文本与项目入口。",
+    "change_purpose": "把日报沉淀的项目推进和待确认提交队列汇总成团队可直接浏览的周度结论。"
   },
   {
     "id": "repo-project-management",

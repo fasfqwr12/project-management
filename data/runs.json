@@ -1,5 +1,29 @@
 [
   {
+    "timestamp": "2026-05-17 17:10:38",
+    "project": "repo-maintenance",
+    "project_name": "仓库维护巡检",
+    "stage": "pm-weekly-summary",
+    "status": "info",
+    "summary": "2026-W20 项目跟踪周报已生成：重点推进 6 项，待确认提交 6 仓",
+    "problem": "待确认提交 6 仓；构建产物待筛：bootloader、J2N4C-150L；skills 需先同步运行目录",
+    "command": "generate weekly summary from project-management tracking data",
+    "duration_ms": 0,
+    "cwd": "E:\\phase1\\progress\\project-management"
+  },
+  {
+    "timestamp": "2026-05-14 17:13:50",
+    "project": "repo-maintenance",
+    "project_name": "仓库维护巡检",
+    "stage": "pm-weekly-summary-skip",
+    "status": "info",
+    "summary": "2026-05-14 周报跳过：本周后面仍有工作日，尚未到周报触发日；预计触发日 2026-05-15",
+    "problem": "",
+    "command": "skip weekly summary until last workday of the week",
+    "duration_ms": 0,
+    "cwd": "E:\\phase1\\progress\\project-management"
+  },
+  {
     "timestamp": "2026-05-13 20:17:12",
     "project": "repo-maintenance",
     "project_name": "仓库维护巡检",
